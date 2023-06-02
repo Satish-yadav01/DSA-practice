@@ -27,6 +27,7 @@ public class MajorityElement {
         return 0;
     }
 
+    //O(n,n)
     private static Map.Entry<Integer, Integer> maxElement(HashMap<Integer, Integer> map) {
         Map.Entry<Integer,Integer> maxElement = null;
 
