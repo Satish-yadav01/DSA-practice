@@ -1,4 +1,4 @@
-package designPattern;
+package designPattern.creationalPattern.builderPattern;
 
 class User {
 

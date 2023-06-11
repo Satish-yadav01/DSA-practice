@@ -1,4 +1,4 @@
-package designPattern;
+package designPattern.creationalPattern.singletonPattern;
 
 class SingletonClass {
     private static int waterLevel = 100;
