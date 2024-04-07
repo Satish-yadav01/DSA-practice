@@ -1,5 +1,9 @@
-out/
-
+# IDE
 .idea/
+.vscode/
 
-DSA-Learning.iml
+# Build files
+target/
+build/
+
+out/
