@@ -1,5 +1,7 @@
 package algorithm.leetcode.math;
 
+import java.util.HashMap;
+
 public class ReverseInteger {
     public static void main(String[] args) {
         int x = 1534236469;
@@ -26,6 +28,9 @@ public class ReverseInteger {
             return -1 * Integer.parseInt(reverse.toString());
         }
         System.out.println(Integer.parseInt(reverse.toString()));
+
+        HashMap<Object, Object> objectObjectHashMap = new HashMap<>();
+
         return Integer.parseInt(reverse.toString());
     }
 
