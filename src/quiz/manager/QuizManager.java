@@ -45,7 +45,6 @@ public class QuizManager {
                 userScore++;
             }
 
-            break;
         }
 
     }
