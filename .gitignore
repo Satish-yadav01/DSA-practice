@@ -1,9 +1,12 @@
 # IDE
-.idea/
+.idea
+.idea/*
 .vscode/
 
 # Build files
 target/
 build/
 
-out/
+out/*
+out/production/*
+out
