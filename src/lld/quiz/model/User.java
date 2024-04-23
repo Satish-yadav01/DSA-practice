@@ -1,4 +1,4 @@
-package quiz.model;
+package lld.quiz.model;
 
 public class User {
     String name;

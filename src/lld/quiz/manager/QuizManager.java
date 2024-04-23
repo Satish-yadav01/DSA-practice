@@ -1,10 +1,10 @@
-package quiz.manager;
+package lld.quiz.manager;
 
 
-import quiz.model.Question;
-import quiz.model.User;
-import quiz.model.UserScore;
-import quiz.util.QuizUtil;
+import lld.quiz.model.Question;
+import lld.quiz.model.User;
+import lld.quiz.model.UserScore;
+import lld.quiz.util.QuizUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,7 +24,7 @@ public class QuizManager {
         Scanner sc = new Scanner(System.in);
         List<Question> userScores = UserScore.getUserScore();
 
-        System.out.println("Hello " + user.getName() + ", welcome to the quiz");
+        System.out.println("Hello " + user.getName() + ", welcome to the lld.quiz");
 
         for (int i = 0; i <= userScores.size()-1; i++) {
             System.out.print(userScores.get(i).getNo() + ". "+ userScores.get(i).getDescription()+"\n");

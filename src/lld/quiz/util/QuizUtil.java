@@ -1,4 +1,4 @@
-package quiz.util;
+package lld.quiz.util;
 
 import java.util.List;
 

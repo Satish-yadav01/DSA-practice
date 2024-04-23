@@ -1,4 +1,4 @@
-package quiz.model;
+package lld.quiz.model;
 
 import java.util.List;
 

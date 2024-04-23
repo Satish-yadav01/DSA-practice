@@ -1,7 +1,7 @@
-package quiz;
+package lld.quiz;
 
-import quiz.manager.QuizManager;
-import quiz.model.User;
+import lld.quiz.manager.QuizManager;
+import lld.quiz.model.User;
 
 public class Driver {
     public static void main(String[] args) {
