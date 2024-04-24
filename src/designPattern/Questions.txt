@@ -1,0 +1,27 @@
+1. difference between creational structural and behavioral design pattern
+
+=>
+Design patterns are solutions to recurring design problems in software engineering. They are categorized into three main groups: creational, structural, and behavioral.
+
+1. Creational Design Patterns:
+Creational design patterns deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. They help in making a system independent of how its objects are created, composed, and represented. Some common creational design patterns include:
+Singleton: Ensures that a class has only one instance and provides a global point of access to that instance.
+Factory Method: Defines an interface for creating an object, but allows subclasses to alter the type of objects that will be instantiated.
+Abstract Factory: Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+Builder: Separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
+
+2. Structural Design Patterns:
+   Structural design patterns deal with object composition or forming class structures. They focus on simplifying the design by identifying relationships between entities. Some common structural design patterns include:
+   Adapter: Allows objects with incompatible interfaces to work together by providing a wrapper with a compatible interface.
+   Decorator: Adds new functionality to an object dynamically without altering its structure.
+   Facade: Provides a simplified interface to a larger body of code, such as a complex subsystem.
+   Proxy: Provides a placeholder for another object to control access to it.
+
+3. Behavioral Design Patterns:
+   Behavioral design patterns deal with object collaboration and responsibilities. They describe interactions between objects and how they communicate with each other. Some common behavioral design patterns include:
+   Observer: Defines a one-to-many dependency between objects, so that when one object changes state, all its dependents are notified and updated automatically.
+   Strategy: Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+   Command: Encapsulates a request as an object, thereby allowing for parameterization of clients with queues, requests, and operations.
+   State: Allows an object to alter its behavior when its internal state changes. The object will appear to change its class.
+
+-----------------------------------------------------------------------------------------------------

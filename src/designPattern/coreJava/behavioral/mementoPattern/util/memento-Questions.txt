@@ -1,0 +1,6 @@
+1. What Is the Memento Design Pattern?
+=>The Memento Design Pattern, described by the Gang of Four in their book, is a behavioral design pattern. The Memento Design Pattern offers a solution to implement undoable actions.
+
+2.When to Use Memento Design Pattern?
+=>Typically, the Memento Design Pattern will be used in situations where some actions are undoable, therefore requiring to rollback to a previous state. However, if the state of the Originator is heavy, using the Memento Design Pattern can lead to an expensive creation process and increased use of memory.
+
