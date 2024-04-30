@@ -1,4 +1,4 @@
-package designPattern.coreJava.structuralPattern.bridge;
+package designPattern.coreJava.structuralPattern.bridge.implementor;
 
 public class LandBreathImplementor implements BreathImplementor {
     @Override

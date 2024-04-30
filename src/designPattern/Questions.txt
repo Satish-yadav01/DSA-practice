@@ -1,4 +1,4 @@
-1. difference between creational structural and behavioral design pattern
+1. difference between creational, structural and behavioral design pattern
 
 =>
 Design patterns are solutions to recurring design problems in software engineering. They are categorized into three main groups: creational, structural, and behavioral.
@@ -17,11 +17,11 @@ Builder: Separates the construction of a complex object from its representation,
    Facade: Provides a simplified interface to a larger body of code, such as a complex subsystem.
    Proxy: Provides a placeholder for another object to control access to it.
 
-3. Behavioral Design Patterns:
+3. Behavioral Design Patterns: =>How the objects are interconnected
    Behavioral design patterns deal with object collaboration and responsibilities. They describe interactions between objects and how they communicate with each other. Some common behavioral design patterns include:
    Observer: Defines a one-to-many dependency between objects, so that when one object changes state, all its dependents are notified and updated automatically.
    Strategy: Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
    Command: Encapsulates a request as an object, thereby allowing for parameterization of clients with queues, requests, and operations.
    State: Allows an object to alter its behavior when its internal state changes. The object will appear to change its class.
 
------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------

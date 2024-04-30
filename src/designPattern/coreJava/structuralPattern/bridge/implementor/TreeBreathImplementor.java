@@ -1,6 +1,6 @@
-package designPattern.coreJava.structuralPattern.bridge;
+package designPattern.coreJava.structuralPattern.bridge.implementor;
 
-public class TreeBreathImplementor implements BreathImplementor{
+public class TreeBreathImplementor implements BreathImplementor {
 
     @Override
     public void breath(Object animal) {

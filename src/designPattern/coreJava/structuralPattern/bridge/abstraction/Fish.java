@@ -1,8 +1,10 @@
-package designPattern.coreJava.structuralPattern.bridge;
+package designPattern.coreJava.structuralPattern.bridge.abstraction;
 
-public class Tree extends LivingThings{
+import designPattern.coreJava.structuralPattern.bridge.implementor.BreathImplementor;
+
+public class Fish extends LivingThings {
     private String name;
-    public Tree(BreathImplementor breathImplementor) {
+    public Fish(BreathImplementor breathImplementor) {
         super(breathImplementor);
     }
 

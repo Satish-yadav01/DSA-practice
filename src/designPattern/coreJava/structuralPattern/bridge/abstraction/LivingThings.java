@@ -1,4 +1,6 @@
-package designPattern.coreJava.structuralPattern.bridge;
+package designPattern.coreJava.structuralPattern.bridge.abstraction;
+
+import designPattern.coreJava.structuralPattern.bridge.implementor.BreathImplementor;
 
 public abstract class LivingThings {
     BreathImplementor breathImplementor;
