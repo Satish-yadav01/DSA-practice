@@ -1,6 +1,6 @@
 package vectorandstack;
 
-import linkedlist.EmptyLinkedList;
+import dataStructure.linkedlist.EmptyLinkedList;
 
 public class StackExample {
 

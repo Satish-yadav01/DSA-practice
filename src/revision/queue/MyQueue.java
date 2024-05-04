@@ -1,6 +1,6 @@
 package revision.queue;
 
-import linkedlist.EmptyLinkedList;
+import dataStructure.linkedlist.EmptyLinkedList;
 import revision.LinkedList.MyLinkedList;
 
 public class MyQueue<E> {

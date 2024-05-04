@@ -1,7 +1,7 @@
 package vectorandstack;
 
-import linkedlist.EmptyLinkedList;
-import linkedlist.MyLinkedList;
+import dataStructure.linkedlist.EmptyLinkedList;
+import dataStructure.linkedlist.MyLinkedList;
 
 public class MyStack<E> {
     MyLinkedList<E> ll = new MyLinkedList<>();

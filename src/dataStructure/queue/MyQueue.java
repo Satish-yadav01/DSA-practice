@@ -1,21 +1,17 @@
-package revision.stack;
+package dataStructure.queue;
 
 import dataStructure.linkedlist.EmptyLinkedList;
 import revision.LinkedList.MyLinkedList;
 
-public class MyStack<E>{
+public class MyQueue<E> {
     MyLinkedList<E> ll = new MyLinkedList<>();
 
-    public void push(E data){
+    public void enqueue(E data){
         ll.add(data);
     }
 
-    public E pop() throws EmptyLinkedList {
-        return ll.remove();
-    }
-
-    public E peek() throws EmptyLinkedList {
-        return ll.getLast();
+    public E dequeue() throws EmptyLinkedList {
+        return ll.remove(0);
     }
 
     public void print() throws EmptyLinkedList {

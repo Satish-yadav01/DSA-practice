@@ -1,4 +1,4 @@
-package revision.queue;
+package dataStructure.queue;
 
 import dataStructure.linkedlist.EmptyLinkedList;
 

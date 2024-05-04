@@ -1,4 +1,4 @@
-package revision.stack;
+package dataStructure.stack;
 
 import dataStructure.linkedlist.EmptyLinkedList;
 

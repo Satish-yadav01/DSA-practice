@@ -1,6 +1,6 @@
 package revision.LinkedList;
 
-import linkedlist.EmptyLinkedList;
+import dataStructure.linkedlist.EmptyLinkedList;
 
 public class MyLinkedList<E>{
 
