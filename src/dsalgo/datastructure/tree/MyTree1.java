@@ -1,4 +1,4 @@
-package dataStructure.tree;
+package dsalgo.datastructure.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * @author satish yadav
- * @apiNote This is the second method to create dataStructure.tree as par user instructed in console
+ * @apiNote This is the second method to create dsalgo. tree as par user instructed in console
  */
 public class MyTree1 {
 

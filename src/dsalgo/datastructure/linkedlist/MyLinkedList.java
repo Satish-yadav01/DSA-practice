@@ -1,4 +1,4 @@
-package dataStructure.linkedlist;
+package dsalgo.datastructure.linkedlist;
 
 public class MyLinkedList<E> {
 

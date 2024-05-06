@@ -1,8 +1,8 @@
-package dataStructure.tree.newTree;
+package dsalgo.datastructure.tree.newTree;
 
 /**
  * @author satish yadav
- * @apiNote This is the first method to create dataStructure.tree where we are passing nodes in arrays itself
+ * @apiNote This is the first method to create dsalgo.datastructure.tree where we are passing nodes in arrays itself
  */
 public class MyTree2 {
     static class Node{

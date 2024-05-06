@@ -1,6 +1,6 @@
 package revision.LinkedList;
 
-import dataStructure.linkedlist.EmptyLinkedList;
+import dsalgo.datastructure.linkedlist.EmptyLinkedList;
 
 public class MyLinkedListExample {
     public static void main(String[] args) throws EmptyLinkedList {

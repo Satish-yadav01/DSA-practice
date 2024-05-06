@@ -1,6 +1,6 @@
 package revision.stack;
 
-import dataStructure.linkedlist.EmptyLinkedList;
+import dsalgo.datastructure.linkedlist.EmptyLinkedList;
 
 public class MyStackExample {
     public static void main(String[] args) throws EmptyLinkedList {

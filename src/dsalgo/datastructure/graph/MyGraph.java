@@ -1,4 +1,4 @@
-package dataStructure.graph;
+package dsalgo.datastructure.graph;
 
 import java.util.ArrayList;
 
@@ -22,7 +22,7 @@ public class MyGraph {
     }
 
     public void createGraph(){
-//        System.out.println(dataStructure.graph.length);
+//        System.out.println(dsalgo.datastructure.graph.length);
         for (int i = 0; i < graph.length; i++) {
             graph[i] = new ArrayList<Edge>();
         }

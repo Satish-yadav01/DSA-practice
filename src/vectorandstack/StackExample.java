@@ -1,6 +1,6 @@
 package vectorandstack;
 
-import dataStructure.linkedlist.EmptyLinkedList;
+import dsalgo.datastructure.linkedlist.EmptyLinkedList;
 
 public class StackExample {
 

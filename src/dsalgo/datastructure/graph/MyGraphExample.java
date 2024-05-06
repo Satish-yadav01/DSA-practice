@@ -1,9 +1,9 @@
-package dataStructure.graph;
+package dsalgo.datastructure.graph;
 
 public class MyGraphExample {
     public static void main(String[] args) {
         int v = 4;
-//        ArrayList<MyGraph.Edge> dataStructure.graph[] = new ArrayList[v];
+//        ArrayList<MyGraph.Edge> dsalgo.datastructure.graph[] = new ArrayList[v];
         MyGraph g = new MyGraph(v);
         g.createGraph();
 

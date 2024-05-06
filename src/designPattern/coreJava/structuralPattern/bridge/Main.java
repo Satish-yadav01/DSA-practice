@@ -16,7 +16,7 @@ public class Main {
         dog.setName("jerman shephard");
         dog.breathProcess(dog);
         Tree tree = new Tree(new TreeBreathImplementor());
-        tree.setName("oak dataStructure.tree");
+        tree.setName("oak dsalgo.datastructure.tree");
         tree.breathProcess(tree);
     }
 }

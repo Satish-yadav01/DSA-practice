@@ -1,7 +1,7 @@
 package vectorandstack;
 
-import dataStructure.linkedlist.EmptyLinkedList;
-import dataStructure.linkedlist.MyLinkedList;
+import dsalgo.datastructure.linkedlist.EmptyLinkedList;
+import dsalgo.datastructure.linkedlist.MyLinkedList;
 
 public class MyStack<E> {
     MyLinkedList<E> ll = new MyLinkedList<>();

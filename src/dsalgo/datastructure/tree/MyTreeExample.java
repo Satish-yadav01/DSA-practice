@@ -1,4 +1,4 @@
-package dataStructure.tree;
+package dsalgo.datastructure.tree;
 
 public class MyTreeExample {
     public static void main(String[] args) {

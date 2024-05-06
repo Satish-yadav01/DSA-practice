@@ -1,4 +1,4 @@
-package dataStructure.linkedlist;
+package dsalgo.datastructure.linkedlist;
 
 public class MyLinkedListEample {
     public static void main(String[] args) throws EmptyLinkedList {

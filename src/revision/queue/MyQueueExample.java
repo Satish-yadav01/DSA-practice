@@ -1,6 +1,6 @@
 package revision.queue;
 
-import dataStructure.linkedlist.EmptyLinkedList;
+import dsalgo.datastructure.linkedlist.EmptyLinkedList;
 
 public class MyQueueExample {
     public static void main(String[] args) throws EmptyLinkedList {

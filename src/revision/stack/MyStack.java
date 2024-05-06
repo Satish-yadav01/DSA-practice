@@ -1,6 +1,6 @@
 package revision.stack;
 
-import dataStructure.linkedlist.EmptyLinkedList;
+import dsalgo.datastructure.linkedlist.EmptyLinkedList;
 import revision.LinkedList.MyLinkedList;
 
 public class MyStack<E>{
