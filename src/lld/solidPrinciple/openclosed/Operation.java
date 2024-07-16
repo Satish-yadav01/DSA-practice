@@ -4,5 +4,5 @@ package lld.solidPrinciple.openclosed;
 // and our calculator get extensions without modifying it main task
 // that is performing calculation
 public interface Operation {
-    public int perform(int number1 , int number2);
+    int perform(int number1, int number2);
 }
