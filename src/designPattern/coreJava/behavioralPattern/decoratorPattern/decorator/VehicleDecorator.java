@@ -1,6 +1,6 @@
 package designPattern.coreJava.behavioralPattern.decoratorPattern.decorator;
 
-import designpattern.decoratorPattern.model.Vehicle;
+import designPattern.coreJava.behavioralPattern.decoratorPattern.model.Vehicle;
 
 /**
  * @author : Satish Yadav

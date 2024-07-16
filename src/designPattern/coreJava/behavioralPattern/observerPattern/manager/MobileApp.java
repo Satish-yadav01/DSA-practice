@@ -1,6 +1,6 @@
 package designPattern.coreJava.behavioralPattern.observerPattern.manager;
 
-import designpattern.observerPattern.model.Observer;
+import designPattern.coreJava.behavioralPattern.observerPattern.model.Observer;
 
 /**
  * @author : Satish Yadav

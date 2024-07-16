@@ -1,8 +1,8 @@
 package designPattern.coreJava.behavioralPattern.decoratorPattern;
 
-import designpattern.decoratorPattern.decorator.GpsDecorator;
-import designpattern.decoratorPattern.decorator.ParkingSensorDecorator;
-import designpattern.decoratorPattern.model.Car;
+import designPattern.coreJava.behavioralPattern.decoratorPattern.decorator.GpsDecorator;
+import designPattern.coreJava.behavioralPattern.decoratorPattern.decorator.ParkingSensorDecorator;
+import designPattern.coreJava.behavioralPattern.decoratorPattern.model.Car;
 
 /**
  * @author : Satish Yadav

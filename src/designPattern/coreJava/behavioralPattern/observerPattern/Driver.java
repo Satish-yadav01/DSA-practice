@@ -1,9 +1,9 @@
 package designPattern.coreJava.behavioralPattern.observerPattern;
 
-import designpattern.observerPattern.manager.MobileApp;
-import designpattern.observerPattern.manager.ParkingManagerSystem;
-import designpattern.observerPattern.model.Observer;
-import designpattern.observerPattern.model.ParkingSpot;
+import designPattern.coreJava.behavioralPattern.observerPattern.manager.MobileApp;
+import designPattern.coreJava.behavioralPattern.observerPattern.manager.ParkingManagerSystem;
+import designPattern.coreJava.behavioralPattern.observerPattern.model.Observer;
+import designPattern.coreJava.behavioralPattern.observerPattern.model.ParkingSpot;
 
 /**
  * @author : Satish Yadav
