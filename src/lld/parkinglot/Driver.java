@@ -1,0 +1,72 @@
+package lld.parkinglot;
+
+import parkinglot.constant.VehicleType;
+import parkinglot.costStrategy.MinuteBasedStrategy;
+import parkinglot.factory.VehicleFactory;
+import parkinglot.model.Admin;
+import parkinglot.model.Entrance;
+import parkinglot.model.Floor;
+import parkinglot.model.Ticket;
+import parkinglot.model.spot.ThreeWheelerParkingSpot;
+import parkinglot.model.spot.TwoWheelerParkingSpot;
+import parkinglot.repo.Vehicle;
+
+import java.util.List;
+
+/**
+ * @author : Satish Yadav
+ * @purpose :
+ */
+public class Driver {
+    public static void main(String[] args) {
+        Floor floor1 = new Floor(1, 400);
+        Floor floor2 = new Floor(2, 600);
+
+        Admin admin = Admin.getInstance(List.of(floor1, floor2));
+
+
+        try {
+            admin.addParkingSpotOnFloor(new TwoWheelerParkingSpot(1),VehicleType.TWO_WHEELER,1);
+
+            admin.addParkingSpotOnFloor(new TwoWheelerParkingSpot(2),VehicleType.TWO_WHEELER,1);
+
+            admin.addParkingSpotOnFloor(new TwoWheelerParkingSpot(3),VehicleType.THREE_WHEELER,1);
+
+            admin.removeParkingSpotOnFloor(new ThreeWheelerParkingSpot(1),VehicleType.THREE_WHEELER,1);
+
+            admin.addParkingSpotOnFloor(new TwoWheelerParkingSpot(1),VehicleType.FOUR_WHEELER,2);
+
+            int availableOnFloor = admin.getParkingSpotAvailOnAnyFloor(new TwoWheelerParkingSpot(1), VehicleType.THREE_WHEELER);
+
+            if(availableOnFloor == -1){
+                System.out.println("No parking spots available");
+            }else {
+                System.out.println("parking available on floor : "+availableOnFloor);
+            }
+
+            Vehicle vehicle = VehicleFactory.getVehicle("MH475499", "red", VehicleType.THREE_WHEELER);
+
+            vehicle.park();
+
+            Vehicle vehicle2 = VehicleFactory.getVehicle("MH475499", "red", VehicleType.TWO_WHEELER);
+
+            vehicle2.park();
+
+
+            Entrance entrance = Entrance.getInstance(admin);
+            int spot = entrance.findSpot(VehicleType.TWO_WHEELER, 1);
+            Ticket ticket = null;
+            System.out.println("Vehicle : "+vehicle.getVehicleNo());
+            if(spot != -1){
+                ticket = entrance.bookSpotAndGiveTicket(vehicle, new MinuteBasedStrategy());
+            }
+
+            System.out.println("ticket found : " + ticket.getVehicle().getVehicleNo());
+
+
+        } catch (Exception e) {
+            System.out.println("error : "+ e.getMessage());
+        }
+
+    }
+}

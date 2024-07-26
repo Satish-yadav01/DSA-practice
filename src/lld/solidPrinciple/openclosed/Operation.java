@@ -1,8 +1,0 @@
-package lld.solidPrinciple.openclosed;
-
-// This is good we keep adding new operation implementation
-// and our calculator get extensions without modifying it main task
-// that is performing calculation
-public interface Operation {
-    int perform(int number1, int number2);
-}
