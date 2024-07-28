@@ -1,11 +1,12 @@
 package lld.parkinglot.factory;
 
-import parkinglot.constant.VehicleType;
-import parkinglot.exception.ParkingException;
-import parkinglot.model.spot.FourWheelerParkingSpot;
-import parkinglot.model.spot.ThreeWheelerParkingSpot;
-import parkinglot.model.spot.TwoWheelerParkingSpot;
-import parkinglot.repo.ParkingSpot;
+import lld.parkinglot.constant.VehicleType;
+import lld.parkinglot.exception.ParkingException;
+import lld.parkinglot.model.spot.FourWheelerParkingSpot;
+import lld.parkinglot.model.spot.ThreeWheelerParkingSpot;
+import lld.parkinglot.model.spot.TwoWheelerParkingSpot;
+import lld.parkinglot.repo.ParkingSpot;
+import lld.parkinglot.constant.Error;
 
 /**
  * @author : Satish Yadav

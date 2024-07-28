@@ -1,7 +1,7 @@
 package lld.atmv2.model;
 
-import atmv2.atmstate.AtmState;
-import atmv2.atmstate.IdleState;
+import lld.atmv2.atmstate.AtmState;
+import lld.atmv2.atmstate.IdleState;
 
 /**
  * @author : Satish Yadav

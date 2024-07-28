@@ -1,6 +1,6 @@
 package lld.parkinglot.model.spot;
 
-import parkinglot.repo.ParkingSpot;
+import lld.parkinglot.repo.ParkingSpot;
 
 /**
  * @author : Satish Yadav

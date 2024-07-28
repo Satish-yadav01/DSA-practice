@@ -1,11 +1,11 @@
 package lld.tictactoe.manager;
 
-import tictactoe.data.Move;
-import tictactoe.data.Result;
-import tictactoe.model.GeneralBoard;
-import tictactoe.model.HumanPlayer;
-import tictactoe.repo.Board;
-import tictactoe.repo.Player;
+import lld.tictactoe.data.Move;
+import lld.tictactoe.data.Result;
+import lld.tictactoe.model.GeneralBoard;
+import lld.tictactoe.model.HumanPlayer;
+import lld.tictactoe.repo.Board;
+import lld.tictactoe.repo.Player;
 
 /**
  * @author : Satish Yadav

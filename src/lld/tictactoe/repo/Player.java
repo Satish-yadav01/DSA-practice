@@ -1,6 +1,6 @@
 package lld.tictactoe.repo;
 
-import tictactoe.data.Move;
+import lld.tictactoe.data.Move;
 
 /**
  * @author : Satish Yadav

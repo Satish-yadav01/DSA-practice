@@ -1,7 +1,7 @@
 package lld.tictactoe.model;
 
-import tictactoe.data.Move;
-import tictactoe.repo.Player;
+import lld.tictactoe.data.Move;
+import lld.tictactoe.repo.Player;
 
 import java.util.Random;
 import java.util.Scanner;

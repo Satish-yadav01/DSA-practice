@@ -3,24 +3,24 @@ package lld.quiz.model;
 import java.util.List;
 
 public class Question {
-    String no;
+    String questionNo;
     String description;
     List<String> options;
     String correctAnswer;
 
-    public Question(String no, String description, List options, String correctAnswer) {
-        this.no = no;
+    public Question(String questionNo, String description, List options, String correctAnswer) {
+        this.questionNo = questionNo;
         this.description = description;
         this.options = options;
         this.correctAnswer = correctAnswer;
     }
 
-    public String getNo() {
-        return no;
+    public String getQuestionNo() {
+        return questionNo;
     }
 
-    public void setNo(String no) {
-        this.no = no;
+    public void setQuestionNo(String questionNo) {
+        this.questionNo = questionNo;
     }
 
     public String getDescription() {

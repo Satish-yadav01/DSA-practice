@@ -1,8 +1,8 @@
 package lld.atmv2.atmstate;
 
-import atmv2.constant.TransactionType;
-import atmv2.model.Atm;
-import atmv2.model.User;
+import lld.atmv2.constant.TransactionType;
+import lld.atmv2.model.Atm;
+import lld.atmv2.model.User;
 
 /**
  * @author : Satish Yadav

@@ -1,6 +1,6 @@
 package lld.parkinglot.model;
 
-import parkinglot.repo.Vehicle;
+import lld.parkinglot.repo.Vehicle;
 
 import java.time.LocalDateTime;
 

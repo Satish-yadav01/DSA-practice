@@ -1,7 +1,7 @@
 package lld.parkinglot.costStrategy;
 
-import parkinglot.constant.VehicleType;
-import parkinglot.repo.CostComputation;
+import lld.parkinglot.constant.VehicleType;
+import lld.parkinglot.repo.CostComputation;
 
 /**
  * @author : Satish Yadav

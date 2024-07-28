@@ -1,6 +1,6 @@
 package lld.parkinglot.repo;
 
-import parkinglot.constant.VehicleType;
+import lld.parkinglot.constant.VehicleType;
 
 /**
  * @author : Satish Yadav

@@ -1,8 +1,8 @@
 package lld.atmv2.atmstate;
 
-import atmv2.model.Atm;
-import atmv2.model.User;
-import atmv2.model.UserDetail;
+import lld.atmv2.model.Atm;
+import lld.atmv2.model.User;
+import lld.atmv2.model.UserDetail;
 
 import java.util.Map;
 

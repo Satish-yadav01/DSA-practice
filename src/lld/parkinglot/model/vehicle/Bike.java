@@ -1,7 +1,7 @@
 package lld.parkinglot.model.vehicle;
 
-import parkinglot.constant.VehicleType;
-import parkinglot.repo.Vehicle;
+import lld.parkinglot.constant.VehicleType;
+import lld.parkinglot.repo.Vehicle;
 
 /**
  * @author : Satish Yadav

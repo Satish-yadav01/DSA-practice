@@ -1,15 +1,15 @@
 package lld.parkinglot;
 
-import parkinglot.constant.VehicleType;
-import parkinglot.costStrategy.MinuteBasedStrategy;
-import parkinglot.factory.VehicleFactory;
-import parkinglot.model.Admin;
-import parkinglot.model.Entrance;
-import parkinglot.model.Floor;
-import parkinglot.model.Ticket;
-import parkinglot.model.spot.ThreeWheelerParkingSpot;
-import parkinglot.model.spot.TwoWheelerParkingSpot;
-import parkinglot.repo.Vehicle;
+import lld.parkinglot.constant.VehicleType;
+import lld.parkinglot.costStrategy.MinuteBasedStrategy;
+import lld.parkinglot.factory.VehicleFactory;
+import lld.parkinglot.model.Admin;
+import lld.parkinglot.model.Entrance;
+import lld.parkinglot.model.Floor;
+import lld.parkinglot.model.Ticket;
+import lld.parkinglot.model.spot.ThreeWheelerParkingSpot;
+import lld.parkinglot.model.spot.TwoWheelerParkingSpot;
+import lld.parkinglot.repo.Vehicle;
 
 import java.util.List;
 

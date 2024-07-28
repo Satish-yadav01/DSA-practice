@@ -1,7 +1,7 @@
 package lld.parkinglot.model;
 
-import parkinglot.constant.VehicleType;
-import parkinglot.repo.ParkingSpot;
+import lld.parkinglot.constant.VehicleType;
+import lld.parkinglot.repo.ParkingSpot;
 
 import java.util.List;
 

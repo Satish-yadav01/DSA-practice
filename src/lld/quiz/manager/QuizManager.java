@@ -27,7 +27,7 @@ public class QuizManager {
         System.out.println("Hello " + user.getName() + ", welcome to the lld.quiz");
 
         for (int i = 0; i <= userScores.size()-1; i++) {
-            System.out.print(userScores.get(i).getNo() + ". "+ userScores.get(i).getDescription()+"\n");
+            System.out.print(userScores.get(i).getQuestionNo() + ". "+ userScores.get(i).getDescription()+"\n");
             System.out.println("Options");
             List<String> options = new ArrayList<>(userScores.get(i).getOptions());
             Collections.shuffle(options);

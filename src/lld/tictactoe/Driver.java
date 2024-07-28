@@ -1,7 +1,7 @@
 package lld.tictactoe;
 
-import tictactoe.data.Result;
-import tictactoe.manager.TicTacToeManager;
+import lld.tictactoe.data.Result;
+import lld.tictactoe.manager.TicTacToeManager;
 
 /**
  * @author : Satish Yadav

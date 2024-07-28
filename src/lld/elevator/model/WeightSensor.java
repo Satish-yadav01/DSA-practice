@@ -1,6 +1,6 @@
 package lld.elevator.model;
 
-import elevator.constant.Constant;
+import lld.elevator.constant.Constant;
 
 /**
  * @author : Satish Yadav

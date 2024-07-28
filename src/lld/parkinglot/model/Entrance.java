@@ -1,9 +1,9 @@
 package lld.parkinglot.model;
 
-import parkinglot.constant.VehicleType;
-import parkinglot.factory.ParkingSpotFactory;
-import parkinglot.repo.CostComputation;
-import parkinglot.repo.Vehicle;
+import lld.parkinglot.constant.VehicleType;
+import lld.parkinglot.factory.ParkingSpotFactory;
+import lld.parkinglot.repo.CostComputation;
+import lld.parkinglot.repo.Vehicle;
 
 import java.time.LocalDateTime;
 

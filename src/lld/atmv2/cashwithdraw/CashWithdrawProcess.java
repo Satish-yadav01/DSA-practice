@@ -1,6 +1,6 @@
 package lld.atmv2.cashwithdraw;
 
-import atmv2.model.Atm;
+import lld.atmv2.model.Atm;
 
 /**
  * @author : Satish Yadav

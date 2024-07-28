@@ -1,7 +1,7 @@
 package lld.tictactoe.model;
 
-import tictactoe.data.Move;
-import tictactoe.repo.Board;
+import lld.tictactoe.data.Move;
+import lld.tictactoe.repo.Board;
 
 /**
  * @author : Satish Yadav

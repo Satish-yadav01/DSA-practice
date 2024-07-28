@@ -1,11 +1,11 @@
 package lld.atmv2.atmstate;
 
-import atmv2.cashwithdraw.CashWithdrawProcess;
-import atmv2.cashwithdraw.FiveHundredCashWithdrawProcess;
-import atmv2.cashwithdraw.OneHundredCashWithdrawProcess;
-import atmv2.cashwithdraw.TwoThousandCashWithdrawProcess;
-import atmv2.model.Atm;
-import atmv2.model.User;
+import lld.atmv2.cashwithdraw.FiveHundredCashWithdrawProcess;
+import lld.atmv2.cashwithdraw.CashWithdrawProcess;
+import lld.atmv2.cashwithdraw.OneHundredCashWithdrawProcess;
+import lld.atmv2.cashwithdraw.TwoThousandCashWithdrawProcess;
+import lld.atmv2.model.Atm;
+import lld.atmv2.model.User;
 
 /**
  * @author : Satish Yadav

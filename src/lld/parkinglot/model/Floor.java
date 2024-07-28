@@ -1,8 +1,9 @@
 package lld.parkinglot.model;
 
-import parkinglot.constant.VehicleType;
-import parkinglot.exception.ParkingException;
-import parkinglot.repo.ParkingSpot;
+import lld.parkinglot.constant.VehicleType;
+import lld.parkinglot.constant.Error;
+import lld.parkinglot.exception.ParkingException;
+import lld.parkinglot.repo.ParkingSpot;
 
 import java.util.ArrayList;
 import java.util.List;

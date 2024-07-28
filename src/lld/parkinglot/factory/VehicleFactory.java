@@ -1,12 +1,13 @@
 package lld.parkinglot.factory;
 
 
-import parkinglot.constant.VehicleType;
-import parkinglot.exception.ParkingException;
-import parkinglot.model.vehicle.Auto;
-import parkinglot.model.vehicle.Bike;
-import parkinglot.model.vehicle.Car;
-import parkinglot.repo.Vehicle;
+import lld.parkinglot.constant.VehicleType;
+import lld.parkinglot.constant.Error;
+import lld.parkinglot.exception.ParkingException;
+import lld.parkinglot.model.vehicle.Auto;
+import lld.parkinglot.model.vehicle.Bike;
+import lld.parkinglot.model.vehicle.Car;
+import lld.parkinglot.repo.Vehicle;
 
 /**
  * @author : Satish Yadav
