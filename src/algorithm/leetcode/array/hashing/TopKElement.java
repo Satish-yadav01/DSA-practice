@@ -1,11 +1,11 @@
-package algorithm.leetcode.array;
+package algorithm.leetcode.array.hashing;
 
 import java.util.Arrays;
 
 public class TopKElement {
     public static void main(String[] args) {
         int[] ints = topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2);
-
+        System.out.println("ints = " + Arrays.toString(ints));
         for(int i=0; i<=ints.length-1; i++){
             System.out.print(ints[i]+" ");
         }

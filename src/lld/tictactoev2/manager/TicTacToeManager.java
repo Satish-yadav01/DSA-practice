@@ -15,10 +15,10 @@ import java.util.Scanner;
  * @purpose :
  */
 public class TicTacToeManager {
-    private Player player1 = new HumanPlayer();
-    private Player player2 = new HumanPlayer();
-    private Board board = new GeneralBoard();
-    private Scanner scanner;
+    private final Player player1 = new HumanPlayer();
+    private final Player player2 = new HumanPlayer();
+    private final Board board = new GeneralBoard();
+    private final Scanner scanner;
 
     public TicTacToeManager() {
         this.scanner = new Scanner(System.in);

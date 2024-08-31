@@ -19,22 +19,27 @@ public class GeneralBoard implements Board {
     }
 
     @Override
-    public String applyMoveOnBoard(Move move,char symbol) {
-        try{
-            if(this.board[move.getX()][move.getY()] != '.'){
+    public String applyMoveOnBoard(Move move, char symbol) {
+
+//        if (move.getX() < 0 || move.getY() < 0 || move.getX() >= boardGrid || move.getY() >= boardGrid) {
+//            return "Invalid Move";
+//        }
+
+        try {
+            if (this.board[move.getX()][move.getY()] != '.') {
                 System.out.println("Position Already covered,Please try again");
                 return Constants.MOVE_FAILURE;
             }
             this.board[move.getX()][move.getY()] = symbol;
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return Constants.MOVE_SUCCESS;
     }
 
     @Override
-    public void printBoard(){
+    public void printBoard() {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
                 System.out.print(this.board[i][j] + "  |");
@@ -46,12 +51,11 @@ public class GeneralBoard implements Board {
     @Override
     public boolean isDraw() {
         boolean isDraw = false;
-        for (int i = 0; i <= this.board.length-1; i++) {
-            for (int j = 0; j <= this.board.length-1; j++) {
-                if(this.board[i][j] != '.'){
+        for (int i = 0; i <= this.board.length - 1; i++) {
+            for (int j = 0; j <= this.board.length - 1; j++) {
+                if (this.board[i][j] != '.') {
                     isDraw = true;
-                }else {
-                    return false;
+                    break;
                 }
             }
         }
@@ -69,8 +73,8 @@ public class GeneralBoard implements Board {
     }
 
     private void init() {
-        for (int i = 0; i <= board.length-1; i++) {
-            for (int j = 0; j <= board.length-1; j++) {
+        for (int i = 0; i <= board.length - 1; i++) {
+            for (int j = 0; j <= board.length - 1; j++) {
                 this.board[i][j] = '.';
             }
         }
@@ -80,11 +84,11 @@ public class GeneralBoard implements Board {
     }
 
     private boolean isDiagonalLine(char symbol) {
-        for (int i = 0; i <= this.board.length-1; i++) {
-            for (int j = 0; j <= this.board.length-1; j++) {
-                if(this.board[0][0] == symbol && this.board[1][1] == symbol && this.board[2][2] == symbol) {
+        for (int i = 0; i <= this.board.length - 1; i++) {
+            for (int j = 0; j <= this.board.length - 1; j++) {
+                if (this.board[0][0] == symbol && this.board[1][1] == symbol && this.board[2][2] == symbol) {
                     return true;
-                }else if(this.board[0][2] == symbol && this.board[1][1] == symbol && this.board[2][0] == symbol) {
+                } else if (this.board[0][2] == symbol && this.board[1][1] == symbol && this.board[2][0] == symbol) {
                     return true;
                 }
             }
@@ -93,9 +97,9 @@ public class GeneralBoard implements Board {
     }
 
     private boolean isHorizontalLine(char symbol) {
-        for (int i = 0; i <= this.board.length-1; i++) {
-            for (int j = 0; j <= this.board.length-1; j++) {
-                if(this.board[i][0] == symbol && this.board[i][1] == symbol && this.board[i][2] == symbol) {
+        for (int i = 0; i <= this.board.length - 1; i++) {
+            for (int j = 0; j <= this.board.length - 1; j++) {
+                if (this.board[i][0] == symbol && this.board[i][1] == symbol && this.board[i][2] == symbol) {
                     return true;
                 }
             }
@@ -104,9 +108,9 @@ public class GeneralBoard implements Board {
     }
 
     private boolean isVerticalLine(char symbol) {
-        for (int i = 0; i <= this.board.length-1; i++) {
-            for (int j = 0; j <= this.board.length-1; j++) {
-                if(this.board[0][i] == symbol && this.board[1][i] == symbol && this.board[2][i] == symbol) {
+        for (int i = 0; i <= this.board.length - 1; i++) {
+            for (int j = 0; j <= this.board.length - 1; j++) {
+                if (this.board[0][i] == symbol && this.board[1][i] == symbol && this.board[2][i] == symbol) {
                     return true;
                 }
             }

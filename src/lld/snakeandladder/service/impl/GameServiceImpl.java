@@ -104,16 +104,16 @@ public class GameServiceImpl implements GameService {
 
         //check is there any snake head or ladder start
         for (int i = 0; i < snakes.size(); i++) {
-            if(snakes.get(i).getHead() == updatedPosition) {
-                updatedPosition = snakes.get(i).getTail();
+            if(snakes.get(i).head() == updatedPosition) {
+                updatedPosition = snakes.get(i).tail();
                 System.out.println("Found snake : updating position to " + updatedPosition);
                 return updatedPosition;
             }
         }
 
         for (int i = 0; i < ladders.size(); i++) {
-            if(ladders.get(i).getStart() == updatedPosition) {
-                updatedPosition = ladders.get(i).getEnd();
+            if(ladders.get(i).start() == updatedPosition) {
+                updatedPosition = ladders.get(i).end();
                 System.out.println("Found Ladder : updating position to " + updatedPosition);
                 return updatedPosition;
             }

@@ -1,4 +1,4 @@
-package algorithm.leetcode.array;
+package algorithm.leetcode.array.hashing;
 
 /*
 1275. Find Winner on a Tic Tac Toe Game

@@ -1,4 +1,4 @@
-package algorithm.leetcode.array;
+package algorithm.leetcode.array.hashing;
 
 public class MovesZeros {
     public static void main(String[] args) {
