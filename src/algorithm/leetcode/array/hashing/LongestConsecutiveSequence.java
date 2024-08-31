@@ -27,8 +27,34 @@ Constraints:
 *
 * */
 
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.stream.IntStream;
+
 public class LongestConsecutiveSequence {
     public static void main(String[] args) {
+        int longestConsecutive = longestConsecutive(new int[]{0,3,2,5,4,6,1,1});
+        System.out.println(longestConsecutive);
 
+    }
+    public static int longestConsecutive(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+
+        for (int num : nums) {
+            set.add(num);
+        }
+
+        int max = 0;
+        for(int n : set){
+            if(!set.contains(n-1)){
+                int length = 1;
+                while(set.contains(n + length)) length++;
+                max = Math.max(max, length);
+            }
+        }
+
+        return max;
     }
 }
