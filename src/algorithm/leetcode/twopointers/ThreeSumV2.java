@@ -47,7 +47,7 @@ Constraints:
 * */
 public class ThreeSumV2 {
     public static void main(String[] args) {
-        List<List<Integer>> lists = threeSum(new int[]{-1, 0, 1, 2, -1, -4});
+        List<List<Integer>> lists = threeSumV2(new int[]{-1, 0, 1, 2, -1, -4});
         for (List<Integer> list : lists) {
             System.out.println(list);
         }
@@ -58,7 +58,7 @@ public class ThreeSumV2 {
         List<List<Integer>> res = new ArrayList<>();
 
         for(int i=0; i<=nums.length-1; i++){
-            if(nums[i] > 0) break;
+            if (nums[i] > 0) break;
             if(i>0 && nums[i] == nums[i-1]) continue;
 
             int l = i+1, r = nums.length-1;
@@ -81,5 +81,34 @@ public class ThreeSumV2 {
 
         return res;
 
+    }
+
+    public static List<List<Integer>> threeSumV2(int[] nums) {
+        // [-1,-1,-1,0,1,2]
+        Arrays.sort(nums);
+        List<List<Integer>> res = new ArrayList<>();
+
+        for(int i=0; i<=nums.length-1; i++){
+            if(nums[i] > 0) break;
+            if(i>0 && nums[i] == nums[i-1]) continue;
+
+            int left = i + 1, right = nums.length-1;
+            while(left < right){
+                int sum = nums[i] + nums[left] + nums[right];
+
+                if(sum < 0){
+                    left++;
+                }else if(sum > 0){
+                    right--;
+                }else{
+                    res.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    left++;
+                    right--;
+                    while(left < right && nums[left] == nums[left-1]) left++;
+                }
+            }
+
+        }
+        return res;
     }
 }
