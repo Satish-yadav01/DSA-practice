@@ -1,0 +1,38 @@
+add(E e): Adds the specified element to the collection if it is not already present. Returns true if the collection changes as a result of the call.
+
+addAll(Collection<? extends E> c): Adds all elements in the specified collection to this collection.
+
+clear(): Removes all elements from the collection, leaving it empty.
+
+contains(Object o): Returns true if the collection contains the specified element.
+
+containsAll(Collection<?> c): Returns true if the collection contains all the elements in the specified collection.
+
+isEmpty(): Returns true if the collection contains no elements.
+
+iterator(): Returns an iterator over the elements in the collection.
+
+remove(Object o): Removes a single instance of the specified element from the collection, if present.
+
+removeAll(Collection<?> c): Removes all elements in the specified collection from this collection.
+
+removeIf(Predicate<? super E> filter): Removes all elements of the collection that match the given predicate.
+
+retainAll(Collection<?> c): Retains only the elements in this collection that are also in the specified collection.
+
+size(): Returns the number of elements in the collection.
+
+toArray(): Returns an array containing all of the elements in this collection.
+
+toArray(T[] a): Returns an array containing all of the elements in this collection, where the runtime type of the returned array is that of the specified array.
+
+equals(Object o): Compares the specified object with this collection for equality.
+
+hashCode(): Returns the hash code value for the collection.
+
+stream(): Returns a stream of elements in the collection for use in stream operations introduced in Java 8.
+
+parallelStream(): Returns a parallel stream of elements in the collection for parallel processing.
+
+These methods are part of the core functionality provided by the Collection interface. Implementing classes, such as ArrayList, LinkedList, HashSet, and more, provide their own specific implementations of these methods to work with their underlying data structures. The choice of collection class depends on the specific requirements of your application.
+

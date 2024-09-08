@@ -1,0 +1,44 @@
+Q. what is functional programming in java
+Ans : 
+Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. In Java, functional programming was introduced as a significant feature with Java 8 and subsequent versions. It enables you to write code in a more declarative and concise manner by using functional constructs. Here are the key aspects of functional programming in Java:
+
+First-Class Functions: In functional programming, functions are treated as first-class citizens, meaning they can be assigned to variables, passed as arguments to other functions, and returned from functions. In Java, this is achieved with lambda expressions and functional interfaces.
+
+Lambda Expressions: Lambda expressions are anonymous functions that allow you to define behavior (code) to be executed later. They provide a concise and expressive way to create functions. Lambda expressions are commonly used with functional interfaces.
+
+Example:
+
+java
+Copy code
+(x, y) -> x + y
+Functional Interfaces: Functional interfaces have a single abstract method (SAM), and they can be used as types for lambda expressions and method references. Java provides several built-in functional interfaces like Consumer, Supplier, Predicate, and Function.
+
+Example:
+
+java
+Copy code
+@FunctionalInterface
+interface MyFunction {
+    int apply(int a, int b);
+}
+Method References: Method references allow you to refer to methods or constructors without invoking them. They provide a way to reuse existing methods as lambda expressions.
+
+Example:
+
+java
+Copy code
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+names.forEach(System.out::println);
+Immutable Data: In functional programming, data is typically immutable. Once created, an object cannot be changed. This reduces the potential for bugs related to shared mutable state.
+
+Avoidance of Side Effects: Functional programming aims to minimize side effects, which are changes in state or behavior that can be observed externally. Pure functions, which have no side effects, are a core concept.
+
+Higher-Order Functions: Functional programming supports higher-order functions, which are functions that take other functions as arguments or return them as results. This allows you to abstract over operations.
+
+Laziness and Stream Processing: Java introduced the Stream API, which allows for the processing of sequences of data with a functional approach. It supports lazy evaluation, enabling efficient processing of large datasets.
+
+Parallelism and Concurrency: Functional programming can simplify concurrent and parallel programming. The functional constructs in Java can be leveraged for parallel processing, as seen with the parallelStream method.
+
+Declarative Style: Functional programming encourages a more declarative style of programming, where you describe what you want to achieve rather than specifying how to achieve it. This can lead to more readable and maintainable code.
+
+Functional programming in Java is not an all-or-nothing proposition. You can gradually introduce functional programming concepts into your codebase, and you can use them where they make sense while still employing traditional Java features when necessary. This approach allows you to take advantage of the benefits of functional programming while working within the Java ecosystem.

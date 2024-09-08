@@ -1,0 +1,54 @@
+In Java 8, the Stream API is a powerful and expressive feature that provides a functional way to work with sequences of data, such as collections (e.g., lists, sets, and maps) and arrays. Streams allow you to perform various operations on data, including filtering, mapping, reducing, and aggregating, in a concise and functional style. Streams are part of the java.util.stream package and are particularly useful for data processing and manipulation.
+
+Here's an overview of the key concepts and operations provided by the Stream API, along with examples:
+
+1. Stream Creation:
+
+You can create a stream from a collection, array, or by using static methods like Stream.of() and Stream.iterate().
+java
+Copy code
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+Stream<String> nameStream = names.stream();
+2. Intermediate Operations:
+
+Intermediate operations are operations that transform an existing stream into a new one. Common intermediate operations include filter, map, distinct, sorted, and limit.
+java
+Copy code
+Stream<String> filteredStream = nameStream.filter(name -> name.length() > 4);
+3. Terminal Operations:
+
+Terminal operations are operations that produce a result or side-effect. Common terminal operations include collect, forEach, reduce, and count.
+java
+Copy code
+filteredStream.forEach(System.out::println);
+4. Lazy Evaluation:
+
+Streams use lazy evaluation, which means intermediate operations are only executed when a terminal operation is invoked. This allows for efficient processing of large datasets.
+Example: Using the Stream API to Find Average of Numbers:
+
+java
+Copy code
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+double average = numbers.stream()
+    .filter(n -> n % 2 == 0) // Filter even numbers
+    .mapToDouble(Integer::doubleValue) // Map to double for averaging
+    .average() // Calculate average
+    .orElse(0.0); // Default value if no elements
+
+System.out.println("Average of even numbers: " + average);
+In this example, we create a stream from a list of numbers, filter for even numbers, map them to double, calculate the average, and finally print the result.
+
+Example: Using the Stream API to Group and Count Names:
+
+java
+Copy code
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David", "Eva", "Alice");
+
+Map<String, Long> nameCounts = names.stream()
+    .collect(Collectors.groupingBy(name -> name, Collectors.counting()));
+
+nameCounts.forEach((name, count) -> System.out.println(name + ": " + count));
+In this example, we use the Stream API to count the occurrences of names and group them into a map.
+
+The Stream API simplifies complex data operations, making code more readable and concise. It also allows for parallel processing by leveraging multi-core processors, which can significantly improve performance when dealing with large datasets.

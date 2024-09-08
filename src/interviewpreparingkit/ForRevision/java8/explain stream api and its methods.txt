@@ -1,0 +1,75 @@
+Q.explain stream api and its methods
+Ans : 
+
+The Stream API in Java is a powerful feature introduced in Java 8 for processing sequences of elements in a functional and declarative style. It allows you to perform operations on collections (or other data sources) using a pipeline of operations, such as filtering, mapping, reducing, and more. Streams are designed to make your code more concise, readable, and often more efficient. Here are some of the key aspects of the Stream API and its methods:
+
+Stream Creation:
+
+You can create a stream from various data sources, including collections, arrays, or I/O channels.
+Example:
+java
+Copy code
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+Stream<Integer> numberStream = numbers.stream();
+===============================================================================================
+Intermediate Operations:
+
+Intermediate operations are operations that transform a stream into another stream. They are often chained together in a pipeline.
+Common intermediate operations include:
+filter(Predicate<T> predicate):=> Filters elements based on a specified condition.
+map(Function<T, R> mapper):=> Transforms elements using a function.
+distinct():=> Removes duplicate elements.
+sorted():=> Sorts elements.
+limit(long maxSize):=> Limits the number of elements in the stream.
+skip(long n):=> Skips the first n elements in the stream.
+===============================================================================================
+
+Terminal Operations:
+
+Terminal operations produce a result or a side effect, closing the stream. They trigger the processing of the stream.
+Common terminal operations include:
+forEach(Consumer<T> action): Performs an action for each element.
+toArray(): Collects elements into an array.
+collect(Collector<T, A, R> collector): Performs a mutable reduction operation.
+min(Comparator<T> comparator) and max(Comparator<T> comparator): Returns the minimum or maximum element.
+count(): Returns the count of elements.
+reduce(identity, BinaryOperator<T> accumulator): Reduces the stream to a single value.
+allMatch(Predicate<T> predicate), anyMatch(Predicate<T> predicate), and noneMatch(Predicate<T> predicate): Check if all, any, or no elements match a condition.
+findFirst() and findAny(): Returns the first or any element from the stream
+===============================================================================================
+
+Short-Circuiting Operations:
+
+Some terminal operations are short-circuiting, meaning they may not process the entire stream and terminate as soon as the desired condition is met. Examples include findAny(), findFirst(), allMatch(), and anyMatch().
+===============================================================================================
+Lazy Evaluation:
+
+Streams use lazy evaluation, meaning elements are processed only as necessary, which can improve performance, especially for large datasets.
+===============================================================================================
+Parallel Streams:
+
+You can create parallel streams to leverage multi-core processors for parallel processing using the parallelStream() method.
+===============================================================================================
+Collectors:
+
+The Collectors class provides a set of built-in collectors to accumulate elements into collections, maps, or other data structures. It's often used in combination with the collect terminal operation.
+===============================================================================================
+Method Chaining:
+
+Streams support method chaining, which allows you to compose multiple operations in a single, readable expression.
+Here's an example of a simple stream pipeline that filters even numbers, squares them, and calculates the sum:
+
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+int sumOfSquaresOfEvens = numbers.stream()
+    .filter(n -> n % 2 == 0)
+    .map(n -> n * n)
+    .reduce(0, Integer::sum);
+This code creates a stream, filters even numbers, maps them to their squares, and reduces them to the sum of squares of even numbers.
+
+The Stream API provides a powerful way to work with collections and data transformations in a more concise, readable, and functional style. It's especially useful for data processing, transformations, and filtering operations on large datasets.
+
+
+
+
+methods==================
+toArray()

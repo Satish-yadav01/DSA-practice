@@ -1,0 +1,73 @@
+Java 8 introduced several significant features and enhancements to the Java programming language and its libraries. Some of the key features of Java 8 include:
+=================================================================================================================
+Lambda Expressions:
+
+Lambda expressions allow concise and functional-style coding for implementing single-method interfaces (functional interfaces) using the -> syntax.
+=================================================================================================================
+Functional Interfaces:
+
+Functional interfaces are interfaces with a single abstract method. Java 8 introduced annotations like @FunctionalInterface to explicitly mark interfaces as functional.
+
+=================================================================================================================
+Default Methods:
+
+Default methods allow adding new methods to interfaces without breaking compatibility with classes that already implement those interfaces.
+=================================================================================================================
+
+Static Methods in Interfaces:
+
+Java 8 permits the definition of static methods in interfaces, providing utility methods that can be used by implementing classes.
+=================================================================================================================
+
+Stream API:
+
+The Stream API provides a fluent and functional way to process sequences of data, making it easier to work with collections, aggregate data, and perform parallel processing.
+=================================================================================================================
+
+Functional Programming Support:
+
+Java 8 added functional programming features like map, filter, reduce, and flatMap methods to the Stream API, enabling functional programming paradigms in Java.
+=================================================================================================================
+
+Method References:  //call by method
+
+Method references provide a shorthand notation to refer to methods or constructors using :: operator.
+=================================================================================================================
+
+Optional Class:
+
+The Optional class provides a more elegant way to handle the absence of a value and avoid null pointer exceptions.
+=================================================================================================================
+
+New Date and Time API (java.time):
+
+Java 8 introduced a new and improved Date and Time API that addresses the shortcomings of the old java.util.Date and java.util.Calendar classes.
+=================================================================================================================
+
+Nashorn JavaScript Engine:
+
+Nashorn is a faster and more efficient JavaScript engine that replaces the Rhino engine, making it easier to embed JavaScript code in Java applications.
+CompletableFuture and Concurrency Improvements:
+
+CompletableFuture simplifies asynchronous programming by providing a flexible way to compose and combine asynchronous tasks.
+=================================================================================================================
+
+New Collection Features:
+
+Java 8 introduced several enhancements to the Collections API, including new methods for sorting, filtering, and transforming collections.
+=================================================================================================================
+
+Type Annotations:
+
+Type annotations allow annotations to be applied to any type use, which can be useful for improving code quality and error checking.
+=================================================================================================================
+
+Default Method Resolution Rules:
+
+Java 8 introduced a set of rules to handle conflicts that may arise when multiple interfaces provide default methods with the same signature in a class.
+=================================================================================================================
+
+Compact Profiles:
+
+Java 8 introduced compact profiles, which allow developers to create custom JVM configurations with a smaller subset of the standard Java SE API.
+These features have had a profound impact on Java development, enabling more expressive, efficient, and readable code, and improving support for modern programming paradigms. They have made Java a more versatile and competitive language for a wide range of applications.
