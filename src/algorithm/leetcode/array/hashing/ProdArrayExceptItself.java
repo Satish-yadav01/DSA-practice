@@ -37,7 +37,7 @@ import java.util.Arrays;
 
 public class ProdArrayExceptItself {
     public static void main(String[] args) {
-        int[] produced = productExceptSelf(new int[]{1, 2, 3, 4, 5});
+        int[] produced = productExceptSelf(new int[]{1,2,4,6});
         System.out.println(Arrays.toString(produced));
     }
 

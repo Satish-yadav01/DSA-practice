@@ -9,12 +9,12 @@ import java.util.Collections;
 
 public class SortExample {
     public static void main(String[] args) {
-        interviewBasics.comparator.Emp satish = new interviewBasics.comparator.Emp(1, "satish", 22);
-        interviewBasics.comparator.Emp chandu = new interviewBasics.comparator.Emp(2,"Chandu",22);
-        interviewBasics.comparator.Emp abhishek = new interviewBasics.comparator.Emp(3,"Abhishek",18);
-        interviewBasics.comparator.Emp prince = new interviewBasics.comparator.Emp(4,"prince",20);
+        interviewpreparingkit.interviewBasics.comparator.Emp satish = new interviewpreparingkit.interviewBasics.comparator.Emp(1, "satish", 22);
+        interviewpreparingkit.interviewBasics.comparator.Emp chandu = new interviewpreparingkit.interviewBasics.comparator.Emp(2,"Chandu",22);
+        interviewpreparingkit.interviewBasics.comparator.Emp abhishek = new interviewpreparingkit.interviewBasics.comparator.Emp(3,"Abhishek",18);
+        interviewpreparingkit.interviewBasics.comparator.Emp prince = new interviewpreparingkit.interviewBasics.comparator.Emp(4,"prince",20);
 
-        ArrayList<interviewBasics.comparator.Emp> list = new ArrayList<>();
+        ArrayList<interviewpreparingkit.interviewBasics.comparator.Emp> list = new ArrayList<>();
         list.add(satish);
         list.add(abhishek);
         list.add(chandu);
