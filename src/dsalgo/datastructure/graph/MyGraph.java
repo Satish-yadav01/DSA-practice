@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MyGraph {
 
     int vertex;
-    ArrayList<Edge> graph[];
+    ArrayList<Edge>[] graph;
     public MyGraph(int v){
         this.vertex = v;
         graph = new ArrayList[vertex];
