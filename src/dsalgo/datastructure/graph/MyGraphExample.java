@@ -3,7 +3,7 @@ package dsalgo.datastructure.graph;
 public class MyGraphExample {
     public static void main(String[] args) {
         int v = 4;
-        MyGraph2 g = new MyGraph2(v);
+        MyGraph g = new MyGraph(v);
         g.createGraph();
 
         int[] neighbour = g.neighbour(2);

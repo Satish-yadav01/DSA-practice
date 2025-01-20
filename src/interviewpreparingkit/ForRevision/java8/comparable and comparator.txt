@@ -1,7 +1,9 @@
-In Java, Comparable and Comparator are interfaces that are used to define custom sorting orders for objects. They are essential for sorting elements in collections like arrays, lists, and sets. Let's explore both of these interfaces with examples:
+In Java, Comparable and Comparator are interfaces that are used to define custom sorting orders for objects.
+They are essential for sorting elements in collections like arrays, lists, and sets. Let's explore both of these interfaces with examples:
 
 1. Comparable:
-The Comparable interface is used to define a natural ordering for a class, meaning that the class itself specifies how its instances should be compared and sorted. The natural ordering is typically based on a single attribute or criteria.
+The Comparable interface is used to define a natural ordering for a class, meaning that the class itself specifies how its instances should be compared and sorted.
+The natural ordering is typically based on a single attribute or criteria.
 
 To make a class comparable, it should implement the Comparable interface and override the compareTo method, which takes another object of the same type as a parameter and returns a negative integer, zero, or a positive integer based on how the current object compares to the given object.
 

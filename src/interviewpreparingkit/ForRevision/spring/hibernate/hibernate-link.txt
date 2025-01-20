@@ -1,3 +1,5 @@
 https://www.digitalocean.com/community/tutorials/hibernate-interview-questions-and-answers
 
 https://www.simplilearn.com/hibernate-interview-questions-article
+
+https://www.interviewbit.com/hibernate-interview-questions/

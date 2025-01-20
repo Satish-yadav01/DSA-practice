@@ -1,0 +1,48 @@
+Examples of Filters
+1. Authentication Filters
+Used to verify the identity of the user or system making the request.
+Example: Checking for an Authorization header or validating a JWT token.
+
+2. Logging Filters
+Used to log details of incoming and outgoing HTTP requests and responses for debugging or monitoring purposes.
+Example: Logging request URLs, headers, or client IP addresses.
+
+3. Security Filters
+Part of Spring Security, these filters handle user authentication, authorization, and security-related tasks.
+Example: UsernamePasswordAuthenticationFilter or BasicAuthenticationFilter
+
+4. Exception Handling Filters
+Catch and handle exceptions occurring during request processing at a global level.
+Example: Returning custom error messages or logging errors.
+
+5. CORS Filters
+Control Cross-Origin Resource Sharing (CORS) to allow or block requests from different origins.
+Example: Allowing only specific domains to access the API.
+
+6. Request Modification Filters
+Modify incoming HTTP requests before they reach the controller.
+Example: Adding or removing request headers.
+
+7. Response Modification Filters
+Modify outgoing HTTP responses before they are sent to the client.
+Example: Adding custom headers or changing response data.
+
+Here are examples of interceptor use cases in Spring Boot
+1. Logging Requests and Responses
+Purpose: Record details of incoming requests (like URL, method) and outgoing responses (like status code).
+Example: Log every request and its corresponding response for monitoring API usage and debugging.
+2. Authentication and Authorization
+Purpose: Validate user credentials or tokens before allowing access to a resource.
+Example: Check if a JWT token in the Authorization header is valid. If invalid, block the request
+3. Adding Common Attributes
+Purpose: Add common attributes or data to the request for controllers to use.
+Example: Add user details to the request based on the authentication token for easier access in controllers.
+4. Request Validation
+Purpose: Validate request parameters or headers before they reach the controller.
+Example: Check if required headers like X-API-KEY are present in the request. If not, reject the request.
+5. Internationalization (i18n)
+Purpose: Set the locale for each request based on a parameter or header.
+Example: Extract a lang parameter from the request (e.g., en or fr) and set the locale for the application.
+6. API Rate Limiting
+Purpose: Enforce a limit on the number of API calls a client can make within a specific timeframe.
+Example: Block users who exceed 100 requests per minute by tracking requests in the interceptor.

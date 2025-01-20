@@ -36,7 +36,7 @@ class MyGraph2 {
             result.add(cur);
 
             for(int i = 0; i < adj.get(cur).size(); i++){
-                if(visited[adj.get(cur).get(i)] == false){
+                if(!visited[adj.get(cur).get(i)]){
                     q.add(adj.get(cur).get(i));
                     visited[adj.get(cur).get(i)] = true;
                 }
@@ -58,7 +58,7 @@ class MyGraph2 {
         result.add(index);
 
         for(int i = 0; i < adj.get(index).size(); i++){
-            if(visited[adj.get(index).get(i)] == false){
+            if(!visited[adj.get(index).get(i)]){
                 dfsUtil(adj.get(index).get(i),visited,result);
             }
         }
