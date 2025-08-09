@@ -1,4 +1,4 @@
-package designPattern.coreJava.behavioralPattern.decoratorPattern.model;
+package designPattern.coreJava.structuralPattern.decoratorPattern.model;
 
 /**
  * @author : Satish Yadav

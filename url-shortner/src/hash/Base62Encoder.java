@@ -6,9 +6,10 @@ public class Base62Encoder {
     public String encode(long number) {
         StringBuilder encoded = new StringBuilder();
         while (number > 0) {
-            int remainder = (int) (number % 62);
+            int remainder = (int) (number % CHAR_SET.length());
             encoded.append(CHAR_SET.charAt(remainder));
-            number /= 62;
+            System.out.println(encoded);
+            number /= CHAR_SET.length();
         }
         return encoded.reverse().toString();
     }

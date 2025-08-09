@@ -8,9 +8,7 @@ import java.util.List;
  * @purpose :
  */
 public class ParkingSpot {
-    private List<Observer> observers = new ArrayList<>();
-    private boolean isFull = false;
-    private String status;
+    private final List<Observer> observers = new ArrayList<>();
 
     public void addObserver(Observer observer) {
         observers.add(observer);
@@ -21,17 +19,13 @@ public class ParkingSpot {
     }
 
     private void notifyObservers(String message) {
-        for (Observer observer : observers) {
-            observer.update(message);
-        }
+        for (Observer observer : observers) observer.update(message);
+
     }
 
     public void isFull(boolean isFull) {
-        this.isFull = isFull;
-        if(isFull){
-            notifyObservers("Parking lot is Full");
-        }else {
-            notifyObservers("Parking lot is not full");
-        }
+        if(isFull) notifyObservers("Parking lot is Full");
+        else notifyObservers("Parking lot is not full");
+
     }
 }

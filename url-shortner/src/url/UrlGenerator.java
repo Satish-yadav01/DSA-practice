@@ -19,4 +19,9 @@ public class UrlGenerator {
     public boolean validateKey(String key) {
         return key != null && key.matches("^[a-zA-Z0-9]+$");
     }
+
+    public static void main(String[] args) {
+        UrlGenerator generator = new UrlGenerator(new Base62Encoder());
+        generator.generateKey("https://www.google.com");
+    }
 }
