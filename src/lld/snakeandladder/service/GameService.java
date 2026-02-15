@@ -23,5 +23,5 @@ public interface GameService {
 
     Board createBoard();
 
-    int play(Player currentPlayer, Dice dice);
+    int play(Player currentPlayer, Dice dice) throws InterruptedException;
 }

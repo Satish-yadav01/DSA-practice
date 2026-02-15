@@ -33,8 +33,8 @@ public class GameServiceImpl implements GameService {
         init();
     }
 
-    public void startGame() {
-        System.out.println("Game is starting...");
+    public void startGame() throws InterruptedException {
+        System.out.println("\nGame is starting...");
 
         //creating board
         board = this.createBoard();
@@ -91,10 +91,21 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public int play(Player currentPlayer, Dice dice) {
+    public int play(Player currentPlayer, Dice dice) throws InterruptedException {
+        System.out.println();
         System.out.println(currentPlayer.getName() + " playing...");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Press Enter to roll dice");
+
+        String input = sc.nextLine();   // <-- reads the whole line, may be empty
+
+        if (!input.isEmpty()) {
+            System.out.println("Invalid Input, try again");
+            return play(currentPlayer, dice);
+        }
         int roll = dice.roll();
         System.out.println(currentPlayer.getName() + " roll: " + roll);
+        Thread.sleep(1000);
         return updatePosition(currentPlayer, roll);
     }
 
