@@ -78,14 +78,3 @@ The `/src` folder is the heart of this repository, organized into the following 
 
 Created by: **Satish Yadav**
 GitHub Profile: [https://github.com/Satish-yadav01]
-<!---LeetCode Topics Start-->
-# LeetCode Topics
-## Array
-|  |
-| ------- |
-| [0152-maximum-product-subarray](https://github.com/Satish-yadav01/DSA-practice/tree/master/0152-maximum-product-subarray) |
-## Dynamic Programming
-|  |
-| ------- |
-| [0152-maximum-product-subarray](https://github.com/Satish-yadav01/DSA-practice/tree/master/0152-maximum-product-subarray) |
-<!---LeetCode Topics End-->
