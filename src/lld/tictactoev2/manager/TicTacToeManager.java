@@ -8,19 +8,26 @@ import lld.tictactoev2.model.HumanPlayer;
 import lld.tictactoev2.service.Board;
 import lld.tictactoev2.service.Player;
 
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * @author : Satish Yadav
  * @purpose :
  */
 public class TicTacToeManager {
-    private final Player player1 = new HumanPlayer();
-    private final Player player2 = new HumanPlayer();
-    private final Board board = new GeneralBoard();
+    private final Player player1;
+    private final Player player2;
+    private final Board board;
     private final Scanner scanner;
+    private final Set<Character> Symbols;
 
     public TicTacToeManager() {
+        Symbols = new HashSet<>();
+        player1 = new HumanPlayer();
+        player2 = new HumanPlayer();
+        board = new GeneralBoard();
         this.scanner = new Scanner(System.in);
     }
 
@@ -38,9 +45,11 @@ public class TicTacToeManager {
                 Move move = currentPlayer.play();
                 String appliedResponse = this.board.applyMoveOnBoard(move, currentPlayer.getSymbol());
                 if(appliedResponse.equals(Constants.MOVE_SUCCESS)){
-                    this.board.printBoard();
                     innerLoop = false;
+                } else if (appliedResponse.equalsIgnoreCase("Invalid Move")) {
+                    System.out.println("Invalid Move. Please try again");
                 }
+                this.board.printBoard();
             }
             innerLoop = true;
 
@@ -66,25 +75,28 @@ public class TicTacToeManager {
     }
 
     private void initializePlayersDetails() {
-        System.out.println("Please Enter the Player1 details.");
-        System.out.println("please enter name : ");
-        String player1Name = this.scanner.next();
-        System.out.println("Please Enter symbol which you wanted to use : ");
-        char player1Symbol = this.scanner.next().charAt(0);
-        player1.setId(1);
-        player1.setName(player1Name);
-        player1.setSymbol(player1Symbol);
+        Player[] players = {player1, player2};
 
-        System.out.println("Please Enter the Player2 details.");
-        System.out.println("please enter name : ");
-        String player2Name = this.scanner.next();
-        System.out.println("Please Enter symbol which you wanted to use : ");
-        char player2Symbol = this.scanner.next().charAt(0);
-        player2.setId(2);
-        player2.setName(player2Name);
-        player2.setSymbol(player2Symbol);
+        for (int i = 0; i < players.length; i++) {
+            int playerId = i + 1;
+            System.out.println("Please Enter the Player" + playerId + " details.");
+
+            System.out.println("please enter name : ");
+            String playerName = this.scanner.next();
+
+            System.out.println("Please Enter symbol which you wanted to use : ");
+            char playerSymbol = this.scanner.next().charAt(0);
+
+            setPlayerValues(playerId, playerName, playerSymbol, players[i]);
+        }
 
         System.out.println("Your Board");
         this.board.printBoard();
+    }
+
+    private static void setPlayerValues(int playerId, String playerName, char playerSymbol, Player players) {
+        players.setId(playerId);
+        players.setName(playerName);
+        players.setSymbol(playerSymbol);
     }
 }

@@ -12,13 +12,16 @@ import lld.tictactoe.repo.Player;
  * @purpose :
  */
 public class TicTacToeManager {
-    Board board;
+    private final Board board;
+
+    public TicTacToeManager(Board board) {
+        this.board = board;
+    }
 
     public Result start(){
         System.out.println("-----------Game start-------");
         Player player1 = new HumanPlayer("Satish",'X');
         Player player2 = new HumanPlayer("Naman",'0');
-        board = new GeneralBoard();
         Player currentPlayer = player1;
         while(!board.isEmpty()){
             Move move = currentPlayer.Play();

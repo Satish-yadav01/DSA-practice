@@ -21,9 +21,9 @@ public class GeneralBoard implements Board {
     @Override
     public String applyMoveOnBoard(Move move, char symbol) {
 
-//        if (move.getX() < 0 || move.getY() < 0 || move.getX() >= boardGrid || move.getY() >= boardGrid) {
-//            return "Invalid Move";
-//        }
+        if (move.getX() < 0 || move.getY() < 0 || move.getX() >= boardGrid || move.getY() >= boardGrid) {
+            return "Invalid Move";
+        }
 
         try {
             if (this.board[move.getX()][move.getY()] != '.') {
@@ -50,11 +50,11 @@ public class GeneralBoard implements Board {
 
     @Override
     public boolean isDraw() {
-        boolean isDraw = false;
+        boolean isDraw = true;
         for (int i = 0; i <= this.board.length - 1; i++) {
             for (int j = 0; j <= this.board.length - 1; j++) {
                 if (this.board[i][j] != '.') {
-                    isDraw = true;
+                    isDraw = false;
                     break;
                 }
             }
@@ -84,36 +84,51 @@ public class GeneralBoard implements Board {
     }
 
     private boolean isDiagonalLine(char symbol) {
-        for (int i = 0; i <= this.board.length - 1; i++) {
-            for (int j = 0; j <= this.board.length - 1; j++) {
-                if (this.board[0][0] == symbol && this.board[1][1] == symbol && this.board[2][2] == symbol) {
-                    return true;
-                } else if (this.board[0][2] == symbol && this.board[1][1] == symbol && this.board[2][0] == symbol) {
-                    return true;
-                }
+        // Check main diagonal (top-left to bottom-right)
+        boolean mainDiagonal = true;
+        for (int i = 0; i < this.board.length; i++) {
+            if (this.board[i][i] != symbol) {
+                mainDiagonal = false;
+                break;
             }
         }
-        return false;
+        if (mainDiagonal) return true;
+
+        // Check anti-diagonal (top-right to bottom-left)
+        boolean antiDiagonal = true;
+        for (int i = 0; i < this.board.length; i++) {
+            if (this.board[i][this.board.length - 1 - i] != symbol) {
+                antiDiagonal = false;
+                break;
+            }
+        }
+        return antiDiagonal;
     }
 
     private boolean isHorizontalLine(char symbol) {
-        for (int i = 0; i <= this.board.length - 1; i++) {
-            for (int j = 0; j <= this.board.length - 1; j++) {
-                if (this.board[i][0] == symbol && this.board[i][1] == symbol && this.board[i][2] == symbol) {
-                    return true;
+        for (char[] chars : this.board) {
+            boolean rowMatch = true;
+            for (int j = 0; j < this.board.length; j++) {
+                if (chars[j] != symbol) {
+                    rowMatch = false;
+                    break;
                 }
             }
+            if (rowMatch) return true;
         }
         return false;
     }
 
     private boolean isVerticalLine(char symbol) {
-        for (int i = 0; i <= this.board.length - 1; i++) {
-            for (int j = 0; j <= this.board.length - 1; j++) {
-                if (this.board[0][i] == symbol && this.board[1][i] == symbol && this.board[2][i] == symbol) {
-                    return true;
+        for (int col = 0; col < this.board.length; col++) {
+            boolean colMatch = true;
+            for (int row = 0; row < this.board.length; row++) {
+                if (this.board[row][col] != symbol) {
+                    colMatch = false;
+                    break;
                 }
             }
+            if (colMatch) return true;
         }
         return false;
     }
