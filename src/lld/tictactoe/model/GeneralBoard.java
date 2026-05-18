@@ -41,8 +41,8 @@ public class GeneralBoard implements Board {
 
     @Override
     public String applyMoveOnBoard(Move move, char symbol) {
-        if(this.board[move.getX()][move.getY()]=='.'){
-            this.board[move.getX()][move.getY()] = symbol;
+        if(this.board[move.x()][move.y()]=='.'){
+            this.board[move.x()][move.y()] = symbol;
             return "move applied";
         }
         return "Please use empty field only";
