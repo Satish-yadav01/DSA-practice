@@ -16,9 +16,9 @@ import lld.parkinglot.repo.Vehicle;
 public class VehicleFactory {
     public static Vehicle getVehicle(String vehicleNo, String color,VehicleType vehicleType) {
         return switch (vehicleType){
-            case VehicleType.TWO_WHEELER -> new Bike(vehicleNo,color,vehicleType);
-            case VehicleType.THREE_WHEELER -> new Auto(vehicleNo,color,vehicleType);
-            case VehicleType.FOUR_WHEELER -> new Car(vehicleNo,color,vehicleType);
+            case VehicleType.TWO_WHEELER -> new Bike(vehicleNo,color);
+            case VehicleType.THREE_WHEELER -> new Auto(vehicleNo,color);
+            case VehicleType.FOUR_WHEELER -> new Car(vehicleNo,color);
             default -> {
                 System.out.println(Error.VEHICLE_TYPE_NOT_RECOGNIZED.getMessage());
                 throw new ParkingException(Error.VEHICLE_TYPE_NOT_RECOGNIZED.getMessage());

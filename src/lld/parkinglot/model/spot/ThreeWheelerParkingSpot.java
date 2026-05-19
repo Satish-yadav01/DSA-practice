@@ -17,7 +17,7 @@ public class ThreeWheelerParkingSpot implements ParkingSpot {
 
     @Override
     public int getId() {
-        return 0;
+        return id;
     }
 
     @Override

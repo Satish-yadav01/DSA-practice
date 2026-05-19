@@ -9,7 +9,7 @@ public enum VehicleType {
     THREE_WHEELER(30),
     FOUR_WHEELER(50);
 
-    private int capacity;
+    private final int capacity;
 
     VehicleType(int capacity) {
         this.capacity = capacity;

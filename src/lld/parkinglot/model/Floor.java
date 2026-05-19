@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  * @purpose :
  */
 public class Floor {
-    private int floorNumber;
+    private final int floorNumber;
     private int capacity;
     private final List<ParkingSpot> twoWheelerParkingSpots;
     private final List<ParkingSpot> threeWheelerParkingSpots;
@@ -31,6 +31,7 @@ public class Floor {
     }
 
     public void addParkingSpot(ParkingSpot parkingSpot, VehicleType vehicleType) {
+        System.out.println("Floor no : " + floorNumber);
         switch (vehicleType){
             case VehicleType.TWO_WHEELER:
                 if(this.capacity >= VehicleType.TWO_WHEELER.getCapacity()){
@@ -152,7 +153,7 @@ public class Floor {
 
 
 
-    public void occupyParkingSpot(VehicleType vehicleType,int spotId){
+    public synchronized void occupyParkingSpot(VehicleType vehicleType,int spotId){
         switch (vehicleType){
             case VehicleType.TWO_WHEELER->{
                 for (int i = 0; i < twoWheelerParkingSpots.size() - 1; i++) {
@@ -188,15 +189,7 @@ public class Floor {
         return floorNumber;
     }
 
-    public void setFloorNumber(int floorNumber) {
-        this.floorNumber = floorNumber;
-    }
-
     public int getCapacity() {
         return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
     }
 }

@@ -11,7 +11,7 @@ public enum Error {
     FOUR_WHEELER_NOT_ENOUGH_CAPACITY("not enough capacity to add 4 wheeler Vehicle on Floor no :");
 
 
-    private String message;
+    private final String message;
     Error(String message) {
         this.message = message;
     }

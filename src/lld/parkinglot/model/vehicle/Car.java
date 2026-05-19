@@ -12,10 +12,10 @@ public class Car implements Vehicle {
     private final String color;
     private final VehicleType vehicleType;
 
-    public Car(String vehicleNo, String color, VehicleType vehicleType) {
+    public Car(String vehicleNo, String color) {
         this.vehicleNo = vehicleNo;
         this.color = color;
-        this.vehicleType = vehicleType;
+        this.vehicleType = VehicleType.FOUR_WHEELER;
     }
 
     @Override
