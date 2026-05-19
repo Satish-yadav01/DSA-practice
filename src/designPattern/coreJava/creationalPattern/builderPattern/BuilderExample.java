@@ -74,8 +74,7 @@ class User {
         }
 
         public User build() {
-            User user = new User(this);
-            return user;
+            return new User(this);
         }
     }
 
@@ -90,5 +89,16 @@ public class BuilderExample {
                 .build();
 
         System.out.println(user);
+
+
+        //It is a immutable thats why thread safe
+        DBConfig dbConfig = new DBConfig.DBConfigBuilder()
+                .setUserName("Satish")
+                .setPassword("123@321")
+                .setPort(8090)
+                .setSsl(true)
+                .build();
+
+        System.out.println(dbConfig);
     }
 }
