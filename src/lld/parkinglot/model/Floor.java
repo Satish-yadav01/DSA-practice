@@ -44,7 +44,7 @@ public class Floor {
             case VehicleType.THREE_WHEELER:
                 if(this.capacity >= VehicleType.THREE_WHEELER.getCapacity()){
                     this.threeWheelerParkingSpots.add(parkingSpot);
-                    this.capacity = this.capacity - VehicleType.TWO_WHEELER.getCapacity();
+                    this.capacity = this.capacity - VehicleType.THREE_WHEELER.getCapacity();
                 }else {
                     throw new ParkingException(Error.THREE_WHEELER_NOT_ENOUGH_CAPACITY.getMessage() + this.floorNumber);
                 }
@@ -52,7 +52,7 @@ public class Floor {
             case VehicleType.FOUR_WHEELER:
                 if(this.capacity >= VehicleType.FOUR_WHEELER.getCapacity()){
                     this.fourWheelerParkingSpots.add(parkingSpot);
-                    this.capacity = this.capacity - VehicleType.TWO_WHEELER.getCapacity();
+                    this.capacity = this.capacity - VehicleType.FOUR_WHEELER.getCapacity();
                 }else {
                     throw new ParkingException(Error.FOUR_WHEELER_NOT_ENOUGH_CAPACITY.getMessage() + this.floorNumber);
                 }
@@ -67,25 +67,25 @@ public class Floor {
     public void removeParkingSpot(ParkingSpot parkingSpot, VehicleType vehicleType){
         switch (vehicleType){
             case VehicleType.TWO_WHEELER:
-                if(this.capacity >= VehicleType.TWO_WHEELER.getCapacity()){
+                if(this.twoWheelerParkingSpots.contains(parkingSpot)){
                     this.twoWheelerParkingSpots.remove(parkingSpot);
-                    this.capacity = this.capacity - VehicleType.TWO_WHEELER.getCapacity();
+                    this.capacity = this.capacity + VehicleType.TWO_WHEELER.getCapacity();
                 }else {
                     throw new ParkingException(Error.TWO_WHEELER_NOT_ENOUGH_CAPACITY.getMessage() + this.floorNumber);
                 }
                 break;
             case VehicleType.THREE_WHEELER:
-                if(this.capacity >= VehicleType.THREE_WHEELER.getCapacity()){
-                    this.threeWheelerParkingSpots.add(parkingSpot);
-                    this.capacity = this.capacity - VehicleType.TWO_WHEELER.getCapacity();
+                if(this.threeWheelerParkingSpots.contains(parkingSpot)){
+                    this.threeWheelerParkingSpots.remove(parkingSpot);
+                    this.capacity = this.capacity + VehicleType.THREE_WHEELER.getCapacity();
                 }else {
                     throw new ParkingException(Error.THREE_WHEELER_NOT_ENOUGH_CAPACITY.getMessage() + this.floorNumber);
                 }
                 break;
             case VehicleType.FOUR_WHEELER:
-                if(this.capacity >= VehicleType.FOUR_WHEELER.getCapacity()){
-                    this.fourWheelerParkingSpots.add(parkingSpot);
-                    this.capacity = this.capacity - VehicleType.TWO_WHEELER.getCapacity();
+                if(this.fourWheelerParkingSpots.contains(parkingSpot)){
+                    this.fourWheelerParkingSpots.remove(parkingSpot);
+                    this.capacity = this.capacity + VehicleType.FOUR_WHEELER.getCapacity();
                 }else {
                     throw new ParkingException(Error.FOUR_WHEELER_NOT_ENOUGH_CAPACITY.getMessage() + this.floorNumber);
                 }
@@ -156,21 +156,21 @@ public class Floor {
     public synchronized void occupyParkingSpot(VehicleType vehicleType,int spotId){
         switch (vehicleType){
             case VehicleType.TWO_WHEELER->{
-                for (int i = 0; i < twoWheelerParkingSpots.size() - 1; i++) {
+                for (int i = 0; i < twoWheelerParkingSpots.size(); i++) {
                     if(twoWheelerParkingSpots.get(i).getId() == spotId){
                         twoWheelerParkingSpots.get(i).occupy();
                     }
                 }
             }
             case VehicleType.THREE_WHEELER->{
-                for (int i = 0; i < threeWheelerParkingSpots.size() - 1; i++) {
+                for (int i = 0; i < threeWheelerParkingSpots.size(); i++) {
                     if(threeWheelerParkingSpots.get(i).getId() == spotId){
                         threeWheelerParkingSpots.get(i).occupy();
                     }
                 }
             }
             case VehicleType.FOUR_WHEELER->{
-                for (int i = 0; i < fourWheelerParkingSpots.size() - 1; i++) {
+                for (int i = 0; i < fourWheelerParkingSpots.size(); i++) {
                     if(fourWheelerParkingSpots.get(i).getId() == spotId){
                         fourWheelerParkingSpots.get(i).occupy();
                     }

@@ -29,7 +29,7 @@ public class Bike implements Vehicle {
 
     @Override
     public void unPark() {
-
+        System.out.println("Bike unparked");
     }
 
     @Override

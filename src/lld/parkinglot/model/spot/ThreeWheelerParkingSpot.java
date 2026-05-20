@@ -32,6 +32,6 @@ public class ThreeWheelerParkingSpot implements ParkingSpot {
 
     @Override
     public void vacateParkingSpot() {
-
+        this.isOccupied = false;
     }
 }

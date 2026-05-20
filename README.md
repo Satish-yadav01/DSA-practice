@@ -22,7 +22,7 @@ The repository is structured for easy navigation depending on your goal.
 
 ### For LLD / System Design Interviews
 - Study the SOLID principles in `/src/solidPrinciple`.
-- Analyze the design patterns in `/src/designPattern`.
+- Analyze the design patterns in `/src/designpattern`.
 - Deep-dive into the case studies in the `/src/lld` directory (e.g., `/parkinglot`, `/cache`, `/atmv2`). Each is a self-contained project.
 - Examine the larger, standalone system design projects like `rate-limiter`, `url-shortner`, and `dns-system`.
 
@@ -59,7 +59,7 @@ The `/src` folder is the heart of this repository, organized into the following 
 -   **`algorithm`**: Implementations of various algorithms, including LeetCode solutions.
 -   **`collections`**: Examples and use cases for the Java Collections Framework.
 -   **`companies`**: Coding questions and problems asked by specific companies.
--   **`designPattern`**: Practical implementations of core Java and JEE design patterns.
+-   **`designpattern`**: Practical implementations of core Java and JEE design patterns.
 -   **`dsalgo`**: Core data structures (Graph, Heap, Tree) and algorithm theory.
 -   **`gfg`**: Problems sourced from GeeksforGeeks, categorized by topic.
 -   **`interviewpreparingkit`**: A collection of notes, basics, and practice questions for interviews.

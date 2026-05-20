@@ -25,7 +25,7 @@ public class Auto implements Vehicle {
 
     @Override
     public void unPark() {
-
+        System.out.println("Auto unparked");
     }
 
     @Override

@@ -7,5 +7,5 @@ import lld.parkinglot.constant.VehicleType;
  * @purpose :
  */
 public interface CostComputation {
-    double calulateCostForTicket(VehicleType vehicleType);
+    double calculateCostForTicket(VehicleType vehicleType);
 }

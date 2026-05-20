@@ -27,7 +27,7 @@ public class TwoWheelerParkingSpot implements ParkingSpot {
 
     @Override
     public void vacateParkingSpot() {
-
+        this.isOccupied = false;
     }
 
     public int getId() {

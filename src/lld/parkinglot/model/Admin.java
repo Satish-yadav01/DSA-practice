@@ -18,7 +18,7 @@ public class Admin{
         this.floors = floors;
     }
 
-    public static Admin getInstance(List<Floor> floors) {
+    public static synchronized Admin getInstance(List<Floor> floors) {
         if(instance == null){
             instance = new Admin(floors);
         }
@@ -81,7 +81,7 @@ public class Admin{
     }
 
 
-    public int getParkingSpotNUmber() {
+    public int getParkingSpotNumber() {
         return 0;
     }
 }

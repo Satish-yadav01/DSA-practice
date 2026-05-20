@@ -22,7 +22,7 @@ public class Entrance {
         this.admin = admin;
     }
 
-    public static Entrance getInstance(Admin admin) {
+    public static synchronized Entrance getInstance(Admin admin) {
         if (instance == null) {
             instance = new Entrance(admin);
         }
@@ -38,11 +38,11 @@ public class Entrance {
         //book spot
         admin.occupyParkingSpot(ParkingSpotFactory.getParkingSpot(vehicle.getVehicleType(), availableFloorForSpot),vehicle.getVehicleType());
 
-        //calculate price
-        int price = 500;
+        //calculate price using strategy
+        double price = costComputation.calculateCostForTicket(vehicle.getVehicleType());
 
         //generate ticket
-        ticket = new Ticket(1, admin.getParkingSpotNUmber(), LocalDateTime.now(), vehicle, price);
+        ticket = new Ticket((int)ticketId++, admin.getParkingSpotNumber(), LocalDateTime.now(), vehicle, price);
         return ticket;
     }
 }

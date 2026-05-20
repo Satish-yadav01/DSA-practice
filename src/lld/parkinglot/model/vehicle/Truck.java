@@ -20,12 +20,12 @@ public class Truck implements Vehicle {
 
     @Override
     public void park() {
-
+        System.out.println("Truck parked");
     }
 
     @Override
     public void unPark() {
-
+        System.out.println("Truck unparked");
     }
 
     @Override

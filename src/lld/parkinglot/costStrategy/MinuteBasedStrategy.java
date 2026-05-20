@@ -9,7 +9,7 @@ import lld.parkinglot.repo.CostComputation;
  */
 public class MinuteBasedStrategy implements CostComputation {
     @Override
-    public double calulateCostForTicket(VehicleType vehicleType) {
+    public double calculateCostForTicket(VehicleType vehicleType) {
         return 0;
     }
 }
