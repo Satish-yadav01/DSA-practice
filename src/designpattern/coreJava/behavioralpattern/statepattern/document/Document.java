@@ -1,7 +1,7 @@
-package designpattern.coreJava.behavioralpattern.statepattern;
+package designpattern.coreJava.behavioralpattern.statepattern.document;
 
-import designpattern.coreJava.behavioralpattern.statepattern.state.DocumentState;
-import designpattern.coreJava.behavioralpattern.statepattern.state.DraftDocumentState;
+import designpattern.coreJava.behavioralpattern.statepattern.document.state.DocumentState;
+import designpattern.coreJava.behavioralpattern.statepattern.document.state.DraftDocumentState;
 
 public class Document {
     private DocumentState currentState;

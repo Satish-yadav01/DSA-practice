@@ -1,6 +1,6 @@
-package designpattern.coreJava.behavioralpattern.statepattern;
+package designpattern.coreJava.behavioralpattern.statepattern.document;
 
-import designpattern.coreJava.behavioralpattern.statepattern.state.DraftDocumentState;
+import designpattern.coreJava.behavioralpattern.statepattern.document.state.DraftDocumentState;
 
 public class Driver {
     public static void main(String[] args) {
