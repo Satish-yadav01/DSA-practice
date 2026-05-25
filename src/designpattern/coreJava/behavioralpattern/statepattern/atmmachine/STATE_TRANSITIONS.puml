@@ -1,0 +1,42 @@
+@startuml ATM_State_Transitions
+
+[*] --> NoCardState
+
+NoCardState --> HasCardState: insertCard()
+NoCardState --> NoCardState: ejectCard()\nenterPin()\nwithdrawCash()
+
+HasCardState --> NoCardState: ejectCard()
+HasCardState --> CashWithdrawalState: enterPin(1234)
+HasCardState --> HasCardState: insertCard()\nwithdrawCash()
+HasCardState --> HasCardState: enterPin(invalid)
+
+CashWithdrawalState --> NoCardState: ejectCard()
+CashWithdrawalState --> CashWithdrawalState: insertCard()\nenterPin()\nwithdrawCash()
+
+NoCardState --> [*]
+
+note right of NoCardState
+    Initial State
+    - No card inserted
+    - Only insertCard() is valid
+    - Other operations print error
+end note
+
+note right of HasCardState
+    Card Inserted
+    - Card is in the machine
+    - PIN not yet verified
+    - Valid: ejectCard(), enterPin()
+    - Invalid: insertCard(), withdrawCash()
+end note
+
+note right of CashWithdrawalState
+    PIN Verified
+    - User can withdraw cash
+    - Valid: withdrawCash(), ejectCard()
+    - Invalid: insertCard(), enterPin()
+    - Uses Chain of Responsibility
+      for cash processing
+end note
+
+@enduml

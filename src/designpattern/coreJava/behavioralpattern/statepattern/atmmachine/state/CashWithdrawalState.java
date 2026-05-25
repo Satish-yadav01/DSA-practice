@@ -1,8 +1,23 @@
 package designpattern.coreJava.behavioralpattern.statepattern.atmmachine.state;
 
 import designpattern.coreJava.behavioralpattern.statepattern.atmmachine.ATMMachine;
+import designpattern.coreJava.behavioralpattern.statepattern.atmmachine.cashwithdrawl.CashWithdrawProcess;
+import designpattern.coreJava.behavioralpattern.statepattern.atmmachine.cashwithdrawl.FiveHundredCashWithdrawProcess;
+import designpattern.coreJava.behavioralpattern.statepattern.atmmachine.cashwithdrawl.OneHundredCashWithdrawProcess;
+import designpattern.coreJava.behavioralpattern.statepattern.atmmachine.cashwithdrawl.TwoThousandCashWithdrawProcess;
 
-public class PinVerifiedState implements ATMState{
+public class CashWithdrawalState implements ATMState{
+
+    private final CashWithdrawProcess cashWithdrawProcess;
+
+    public CashWithdrawalState() {
+        this.cashWithdrawProcess = new TwoThousandCashWithdrawProcess(
+                new FiveHundredCashWithdrawProcess(
+                        new OneHundredCashWithdrawProcess(null)
+                )
+        );
+    }
+
     @Override
     public void insertCard(ATMMachine atm) {
         System.out.println("Card already inserted");
@@ -26,6 +41,7 @@ public class PinVerifiedState implements ATMState{
             System.out.println("Dispensing cash: " + amount);
 
             atm.deductBalance(amount);
+            cashWithdrawProcess.withdraw(atm, (double)amount);
 
             System.out.println("Remaining balance: " + atm.getBalance());
 

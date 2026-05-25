@@ -1,0 +1,78 @@
+@startuml ATM_Withdrawal_Sequence
+
+actor User
+participant ATMMachine
+participant CashWithdrawalState
+participant TwoThousandHandler
+participant FiveHundredHandler
+participant OneHundredHandler
+
+User -> ATMMachine: insertCard()
+activate ATMMachine
+ATMMachine -> ATMMachine: setCurrentState(HasCardState)
+deactivate ATMMachine
+
+User -> ATMMachine: enterPin(1234)
+activate ATMMachine
+ATMMachine -> ATMMachine: setCurrentState(CashWithdrawalState)
+deactivate ATMMachine
+
+User -> ATMMachine: withdrawCash(5800)
+activate ATMMachine
+ATMMachine -> CashWithdrawalState: withdrawCash(atm, 5800)
+activate CashWithdrawalState
+
+CashWithdrawalState -> CashWithdrawalState: Check balance >= 5800
+CashWithdrawalState -> ATMMachine: deductBalance(5800)
+activate ATMMachine
+ATMMachine -> ATMMachine: balance = 100000 - 5800 = 94200
+deactivate ATMMachine
+
+CashWithdrawalState -> TwoThousandHandler: withdraw(atm, 5800)
+activate TwoThousandHandler
+
+TwoThousandHandler -> TwoThousandHandler: Calculate notes: 5800 / 2000 = 2
+TwoThousandHandler -> TwoThousandHandler: Remaining: 5800 % 2000 = 1800
+TwoThousandHandler -> ATMMachine: deductTwoThousandNotes(2)
+activate ATMMachine
+ATMMachine -> ATMMachine: noOfTwoThousandNotes = 10 - 2 = 8
+deactivate ATMMachine
+TwoThousandHandler -> TwoThousandHandler: Print "2000 Notes: 2"
+
+TwoThousandHandler -> FiveHundredHandler: withdraw(atm, 1800)
+activate FiveHundredHandler
+
+FiveHundredHandler -> FiveHundredHandler: Calculate notes: 1800 / 500 = 3
+FiveHundredHandler -> FiveHundredHandler: Remaining: 1800 % 500 = 300
+FiveHundredHandler -> ATMMachine: deductFiveHundredNotes(3)
+activate ATMMachine
+ATMMachine -> ATMMachine: noOfFiveHundredNotes = 50 - 3 = 47
+deactivate ATMMachine
+FiveHundredHandler -> FiveHundredHandler: Print "500 Notes: 3"
+
+FiveHundredHandler -> OneHundredHandler: withdraw(atm, 300)
+activate OneHundredHandler
+
+OneHundredHandler -> OneHundredHandler: Calculate notes: 300 / 100 = 3
+OneHundredHandler -> OneHundredHandler: Remaining: 300 % 100 = 0
+OneHundredHandler -> ATMMachine: deductOneHundredNotes(3)
+activate ATMMachine
+ATMMachine -> ATMMachine: noOfOneHundredNotes = 100 - 3 = 97
+deactivate ATMMachine
+OneHundredHandler -> OneHundredHandler: Print "100 Notes: 3"
+OneHundredHandler -> OneHundredHandler: No remaining amount
+
+deactivate OneHundredHandler
+deactivate FiveHundredHandler
+deactivate TwoThousandHandler
+
+CashWithdrawalState -> CashWithdrawalState: Print "Remaining balance: 94200"
+deactivate CashWithdrawalState
+deactivate ATMMachine
+
+User -> ATMMachine: ejectCard()
+activate ATMMachine
+ATMMachine -> ATMMachine: setCurrentState(NoCardState)
+deactivate ATMMachine
+
+@enduml

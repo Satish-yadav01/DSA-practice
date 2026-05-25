@@ -5,10 +5,17 @@ import designpattern.coreJava.behavioralpattern.statepattern.atmmachine.state.No
 
 public class ATMMachine {
     private ATMState currentState;
-    private int balance = 10000;
+    private int balance = 100000;
+    private int noOfTwoThousandNotes;
+    private int noOfFiveHundredNotes;
+    private int noOfOneHundredNotes;
+
 
     public ATMMachine() {
         this.currentState = new NoCardState();
+        this.noOfTwoThousandNotes = 10;
+        this.noOfFiveHundredNotes = 50;
+        this.noOfOneHundredNotes = 100;
     }
 
     public ATMState getCurrentState() {
@@ -41,4 +48,31 @@ public class ATMMachine {
         currentState.withdrawCash(this,amount);
     }
 
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public int getNoOfTwoThousandNotes() {
+        return noOfTwoThousandNotes;
+    }
+
+    public int getNoOfFiveHundredNotes() {
+        return noOfFiveHundredNotes;
+    }
+
+    public int getNoOfOneHundredNotes() {
+        return noOfOneHundredNotes;
+    }
+
+    public void deductTwoThousandNotes(int notes){
+        this.noOfTwoThousandNotes -= notes;
+    }
+
+    public void deductFiveHundredNotes(int notes){
+        this.noOfFiveHundredNotes -= notes;
+    }
+
+    public void deductOneHundredNotes(int notes){
+        this.noOfOneHundredNotes -=notes;
+    }
 }

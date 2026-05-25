@@ -5,9 +5,9 @@ public class Driver {
         ATMMachine atm = new ATMMachine();
         atm.enterPin(1234);
         atm.insertCard();
-        atm.withdrawCash(500);
+        atm.withdrawCash(5800);
         atm.enterPin(1234);
-        atm.withdrawCash(500);
+        atm.withdrawCash(5800);
         atm.ejectCard();
         atm.withdrawCash(400);
     }

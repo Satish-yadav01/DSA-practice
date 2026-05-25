@@ -18,7 +18,7 @@ public class HasCardState implements ATMState{
     public void enterPin(ATMMachine atm, int pin) {
         if (pin == 1234) {
             System.out.println("PIN verified");
-            atm.setCurrentState(new PinVerifiedState());
+            atm.setCurrentState(new CashWithdrawalState());
         } else {
             System.out.println("Invalid PIN");
         }

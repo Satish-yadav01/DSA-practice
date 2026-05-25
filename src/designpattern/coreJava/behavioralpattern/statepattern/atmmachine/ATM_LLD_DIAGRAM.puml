@@ -1,0 +1,175 @@
+@startuml ATM_Machine_LLD
+
+!define ABSTRACT_COLOR #FFE4B5
+!define INTERFACE_COLOR #E1F5FE
+!define CONCRETE_COLOR #C8E6C9
+!define CONTEXT_COLOR #FFF9C4
+
+skinparam backgroundColor #FAFAFA
+skinparam classBackgroundColor #FFFFFF
+skinparam classBorderColor #333333
+skinparam arrowColor #333333
+
+' Context Class
+class ATMMachine #FFF9C4 {
+    - currentState: ATMState
+    - balance: int
+    - noOfTwoThousandNotes: int
+    - noOfFiveHundredNotes: int
+    - noOfOneHundredNotes: int
+    --
+    + ATMMachine()
+    + insertCard(): void
+    + ejectCard(): void
+    + enterPin(pin: int): void
+    + withdrawCash(amount: int): void
+    + getCurrentState(): ATMState
+    + setCurrentState(state: ATMState): void
+    + getBalance(): int
+    + deductBalance(amount: int): void
+    + setBalance(balance: int): void
+    + getNoOfTwoThousandNotes(): int
+    + getNoOfFiveHundredNotes(): int
+    + getNoOfOneHundredNotes(): int
+    + deductTwoThousandNotes(notes: int): void
+    + deductFiveHundredNotes(notes: int): void
+    + deductOneHundredNotes(notes: int): void
+}
+
+' State Interface
+interface ATMState #E1F5FE {
+    + insertCard(atm: ATMMachine): void
+    + ejectCard(atm: ATMMachine): void
+    + enterPin(atm: ATMMachine, pin: int): void
+    + withdrawCash(atm: ATMMachine, amount: int): void
+}
+
+' Concrete States
+class NoCardState #C8E6C9 {
+    + insertCard(atm: ATMMachine): void
+    + ejectCard(atm: ATMMachine): void
+    + enterPin(atm: ATMMachine, pin: int): void
+    + withdrawCash(atm: ATMMachine, amount: int): void
+}
+
+class HasCardState #C8E6C9 {
+    + insertCard(atm: ATMMachine): void
+    + ejectCard(atm: ATMMachine): void
+    + enterPin(atm: ATMMachine, pin: int): void
+    + withdrawCash(atm: ATMMachine, amount: int): void
+}
+
+class CashWithdrawalState #C8E6C9 {
+    - cashWithdrawProcess: CashWithdrawProcess
+    --
+    + CashWithdrawalState()
+    + insertCard(atm: ATMMachine): void
+    + ejectCard(atm: ATMMachine): void
+    + enterPin(atm: ATMMachine, pin: int): void
+    + withdrawCash(atm: ATMMachine, amount: int): void
+}
+
+' Chain of Responsibility - Abstract Class
+abstract class CashWithdrawProcess #FFE4B5 {
+    # nextCashWithdrawProcess: CashWithdrawProcess
+    --
+    # CashWithdrawProcess(next: CashWithdrawProcess)
+    + withdraw(atm: ATMMachine, amount: double): void
+}
+
+' Concrete Handlers
+class TwoThousandCashWithdrawProcess #C8E6C9 {
+    {static} - TWO_THOUSAND_NOTE: int = 2000
+    --
+    + TwoThousandCashWithdrawProcess(next: CashWithdrawProcess)
+    + withdraw(atm: ATMMachine, amount: double): void
+}
+
+class FiveHundredCashWithdrawProcess #C8E6C9 {
+    {static} - FIVE_HUNDRED_NOTE: int = 500
+    --
+    + FiveHundredCashWithdrawProcess(next: CashWithdrawProcess)
+    + withdraw(atm: ATMMachine, amount: double): void
+}
+
+class OneHundredCashWithdrawProcess #C8E6C9 {
+    {static} - ONE_HUNDRED_NOTE: int = 100
+    --
+    + OneHundredCashWithdrawProcess(next: CashWithdrawProcess)
+    + withdraw(atm: ATMMachine, amount: double): void
+}
+
+' Driver
+class Driver {
+    + {static} main(args: String[]): void
+}
+
+' Relationships
+
+' State Pattern Relationships
+ATMMachine --> ATMState : uses
+ATMState <|.. NoCardState : implements
+ATMState <|.. HasCardState : implements
+ATMState <|.. CashWithdrawalState : implements
+
+' Chain of Responsibility Relationships
+CashWithdrawalState --> CashWithdrawProcess : uses
+CashWithdrawProcess <|-- TwoThousandCashWithdrawProcess : extends
+CashWithdrawProcess <|-- FiveHundredCashWithdrawProcess : extends
+CashWithdrawProcess <|-- OneHundredCashWithdrawProcess : extends
+
+' Chain Links
+TwoThousandCashWithdrawProcess --> FiveHundredCashWithdrawProcess : next
+FiveHundredCashWithdrawProcess --> OneHundredCashWithdrawProcess : next
+
+' Driver Relationship
+Driver --> ATMMachine : uses
+
+' Notes
+note right of ATMMachine
+    Context class that maintains
+    current state and delegates
+    operations to state objects
+end note
+
+note right of ATMState
+    State interface defining
+    all possible operations
+end note
+
+note right of NoCardState
+    Initial state when no card
+    is inserted in the ATM
+end note
+
+note right of HasCardState
+    State when card is inserted
+    but PIN is not verified
+end note
+
+note right of CashWithdrawalState
+    State when PIN is verified
+    and user can withdraw cash
+end note
+
+note right of CashWithdrawProcess
+    Abstract handler for chain
+    of responsibility pattern
+end note
+
+note bottom of TwoThousandCashWithdrawProcess
+    Handles 2000 denomination notes
+    First in the chain
+end note
+
+note bottom of FiveHundredCashWithdrawProcess
+    Handles 500 denomination notes
+    Second in the chain
+end note
+
+note bottom of OneHundredCashWithdrawProcess
+    Handles 100 denomination notes
+    Last in the chain
+end note
+
+@enduml
